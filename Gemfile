@@ -15,6 +15,7 @@ gem 'unicorn'
 gem 'capistrano'
 gem 'pg'
 gem 'devise'
+gem "socialization"
 
 group :development, :test do
   gem "minitest-rails"

@@ -1,4 +1,10 @@
 Quotebin::Application.routes.draw do
+  get "social/follow_tag"
+
+  get "social/follow_username"
+
+  get "social/follow_username_quote"
+
   root to: "home#index"
   # Tags
   get "tags/show"
@@ -34,4 +40,9 @@ Quotebin::Application.routes.draw do
   # Account (must be last!)
   get  ":username" => "account#index", as: :account
   get  ":username/quote/:id" => "account#quote", as: :account_quote
+  # Follow
+  # post "tags/:tag/follow" => "social#follow_tag", as: :follow_tag
+  post ":username/follow" => "social#follow_username", as: :follow_username
+  # Like
+  post ":username/quote/:id/like" => "social#like_username_quote", as: :like_username_quote
 end
