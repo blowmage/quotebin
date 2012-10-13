@@ -1,16 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Quotebin</title>
+  <title>Quote Bin</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
+  <header>
+    <h1><a href="/">Quote Bin</a></h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><%= link_to "home", root_path %></li>
+      <% if signed_in?(:user) -%>
+      <li><%= link_to "profile", profile_path %></li>
+      <li><%= link_to "logout", destroy_user_session_path, method: :delete,
+                                                           data:   { :confirm => "You sure?" } %></li>
+      <% else -%>
+      <li><%= link_to "signup", new_user_registration_path %></li>
+      <li><%= link_to "login",  new_user_session_path %></li>
+      <% end -%>
+    </ul>
+  </nav>
+
   <% flash.each do |type, msg| %>
     <div class="<%= type %>"><%= msg %></div>
   <% end %>
-<%= yield %>
+
+  <%= yield %>
+
+  <footer>
+  </footer>
 
 </body>
+
 </html>
