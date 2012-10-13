@@ -1,0 +1,5 @@
+<h1>Quotes for <%= account.name %></h1>
+
+<% account.quotes.limit(10).each do |quote| %>
+  <%= render quote %>
+<% end %>

@@ -24,4 +24,7 @@ Quotebin::Application.routes.draw do
     delete 'profile'        => 'devise/registrations#destroy', as: :user_registration
     get    'profile/cancel' => 'devise/registrations#cancel',  as: :cancel_user_registration
   end
+  # Account (must be last!)
+  get  ":username" => "account#index", as: :account
+  get  ":username/quote/:id" => "account#quote", as: :account_quote
 end
