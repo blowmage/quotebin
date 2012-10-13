@@ -1,0 +1,25 @@
+require "reserved/usernames"
+require "email_validator"
+
+class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable,
+  # :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :username
+
+  validates :email, presence: true, uniqueness: true, email: true
+  validates :username, presence:   true,
+                       uniqueness: true,
+                       length:     { in: 3..32 },
+                       format:     { with: /^[a-z0-9_]+$/i,
+                                     message: "can only have letters, numbers and '_'" },
+                       exclusion:  { in: Reserved::USERNAMES,
+                                     message: "is reserved" }
+  validates :name,     presence:   true
+  
+end
