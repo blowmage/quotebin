@@ -2,40 +2,162 @@
 <html>
 <head>
   <title>Quote Bin</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+  <script type="text/javascript" src="//use.typekit.net/iky2ouv.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
+<body class="page">
 
-<body>
-  <header>
-    <h1><a href="/">Quote Bin</a></h1>
-  </header>
+  <aside class="page__sidebar">
+    <header class="page__branding">
+      <a class="page__logo js-add-quote">Quote Bin</a>
+      <div class="page__branding__action js-page-branding-action">
+        <a class="js-user-box-toggle button button_inline state_active" href="#">
+          <i class="icon icon_user"></i>
+          <span class="dropdown__arrow">&#x25BC;</span>
+        </a>
+        <a class="js-user-box-toggle button button_inline" href="#">
+          <i class="icon icon_user"></i>
+          <span class="dropdown__arrow">&#x25B2;</span>
+        </a>
+      </div>
+      <div class="page__branding__action js-page-branding-action">
+        <a class="js-user-box-toggle button button_inline state_active" href="#">
+          <i class="icon icon_user"></i>
+          <span class="dropdown__arrow">&#x25BC;</span>
+        </a>
+        <a class="js-user-box-toggle button button_inline" href="#">
+          <i class="icon icon_user"></i>
+          <span class="dropdown__arrow">&#x25B2;</span>
+        </a>
+      </div>
+    </header>
 
-  <nav>
-    <ul>
-      <li><%= link_to "home", root_path %></li>
-      <% if signed_in?(:user) -%>
-      <li><%= link_to "profile", profile_path %></li>
-      <li><%= link_to "quotes", quotes_path %></li>
-      <li><%= link_to "logout", destroy_user_session_path, method: :delete,
-                                                           data:   { :confirm => "You sure?" } %></li>
-      <% else -%>
-      <li><%= link_to "signup", new_user_registration_path %></li>
-      <li><%= link_to "login",  new_user_session_path %></li>
-      <% end -%>
-    </ul>
-  </nav>
+    <% if signed_in?(:user) -%>
+    <section class="user-box js-user-box">
+      <div class="user-box__main">
+        <figure class="figure figure_avatar figure_30 user-box__avatar">
+          <a href="#"><img class="figure__image" src="assets/images/avatar.png"></a>
+        </figure>
+        <div class="page__sidebar__user user-box__name">
+          <%= link_to current_user.name, profile_path, class: "inverted user-box__name-link" %>
+        </div>
+      </div>
+      <div class="user-box__metadata button-bar button-bar_3">
+        <a class="button button_opaque_white button_label-hover" href="">
+          <i class="icon icon_quote_white icon_no-text"></i>
+          <span class="button__title">My Quotes</span>
+        </a>
+        <a class="button button_opaque_white button_label-hover" href="">
+          <i class="icon icon_like_white icon_no-text"></i>
+          <span class="button__title">My Likes</span>
+        </a>
+        <a class="button button_opaque_white button_label-hover" href="">
+          <i class="icon icon_tag_white icon_no-text"></i>
+          <span class="button__title">My Tags</span>
+        </a>
+      </div>
+    </section>
+    <% end -%>
 
-  <% flash.each do |type, msg| %>
-    <div class="<%= type %>"><%= msg %></div>
-  <% end %>
+    <section class="list_trending-tags list">
+      <header class="list__header mbs">Navigation</header>
+        <ul class="list__body">
+          <li class="list__item"><%= link_to "home", root_path %></li>
+          <% if signed_in?(:user) -%>
+          <li class="list__item"><%= link_to "profile", profile_path %></li>
+          <li class="list__item"><%= link_to "quotes", quotes_path %></li>
+          <li class="list__item"><%= link_to "logout", destroy_user_session_path, method: :delete,
+                                                               data:   { :confirm => "You sure?" } %></li>
+          <% else -%>
+          <li class="list__item"><%= link_to "signup", new_user_registration_path %></li>
+          <li class="list__item"><%= link_to "login",  new_user_session_path %></li>
+          <% end -%>
+        </ul>
+      </header>      
+    </section>
 
-  <%= yield %>
+    <section class="list_trending-tags list">
+      <header class="list__header mbs">Trending Tags</header>
+        <ul class="list__body">
+          <li class="list__item"><a href="#">Ridiculus</a></li>
+          <li class="list__item"><a href="#">Ipsum Mollis</a></li>
+          <li class="list__item"><a href="#">Bibendum Purus</a></li>
+          <li class="list__item"><a href="#">Risus Ridiculus</a></li>
+          <li class="list__item"><a href="#">Venenatis Sem</a></li>
+          <li class="list__item"><a href="#">Pellentesque Tellus</a></li>
+          <li class="list__item"><a href="#">Vulputate</a></li>
+          <li class="list__item"><a href="#">Parturient</a></li>
+          <li class="list__item"><a href="#">Dapibus</a></li>
+          <li class="list__item"><a href="#">Inceptos</a></li>
+        </ul>
+      </header>
+    </section>
+  </aside>
 
-  <footer>
-  </footer>
+  <div class="page__main">
+    <% flash.each do |type, msg| %>
+      <div class="<%= type %>"><%= msg %></div>
+    <% end %>
 
+    <%= yield %>
+  </div>
+
+  <div class="quote-creator js-quote-creator">
+    <div class="quote-creator__wrapper">
+      <section class="quote-creator__tags">
+        <div class="input_text quote-creator__input">
+          <input class="quote-creator__input_tag" type="text" placeholder="Tag your quote (optional)">
+        </div>
+      </section>
+      <section class="quote-creator__quote">
+        <textarea class="input_textarea quote-creator__input quote-creator__input_quote" type="text" placeholder="Enter your quote"></textarea>
+        <section class="quote-creator__markdown-tip">
+          <header class="quote-creator__markdown-tip__header">You can use <a href="http://daringfireball.net/projects/markdown/syntax" class="b">Markdown</a> to format your quote.</header>
+          <div class="quote-creator__markdown-tip__body list mbn">
+            <header class="list__header b">We support:</header>
+            <ul class="list__body">
+              <li class="list__item"><span class="b">Lists</span> (1. numbered) (- bulleted)</li>
+              <li class="list__item"><span class="b">Emphasis</span> (*bold*) (**italic**)</li>
+              <li class="list__item"><a href="http://daringfireball.net/projects/markdown/syntax" class="b">How to use Markdown &raquo;</a></li>
+            </ul>
+          </div>
+        </section>
+      </section>
+      <section class="quote-creator__meta">
+        <section class="quote-creator__author">
+          <input class="input_text quote-creator__input" type="text" placeholder="Enter quote author (optional)">
+        </section>
+        <section class="quote-creator__source">
+          <input class="input_text quote-creator__input" type="text" placeholder="Enter quote source (optional)">
+        </section>
+      </section>
+      <footer class="quote-creator__actions">
+        <button class="button button_size_medium fl js-cancel-quote">Cancel</button>
+        <button class="button button_primary button_size_medium fr">Add Quote</button>
+      </footer>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $(".js-main-search").focus(function() {
+        $(this).parent().find(".js-list-main-search").fadeIn("fast");
+      });
+      $(".js-main-search").blur(function() {
+        $(this).parent().find(".js-list-main-search").fadeOut("fast");
+      });
+      $(".js-user-box-toggle").click(function() {
+        $(".js-user-box").toggleClass("state_active");
+        $(".js-page-branding-action").find(".button").toggleClass("state_active");
+      });
+      $(".js-add-quote, .js-cancel-quote").click(function() {
+        $(".js-quote-creator").toggleClass("state_active");
+      });
+    });
+  </script>
 </body>
-
 </html>

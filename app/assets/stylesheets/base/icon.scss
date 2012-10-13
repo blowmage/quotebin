@@ -1,0 +1,60 @@
+.icon {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  width: 20px;
+  height: 20px;
+  position:relative;
+  margin: -4px 4px 0 0;
+  background: url(../../assets/images/no-repeat.png);
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2) {
+  .icon {
+    background: url(../../assets/images/no-repeat-2x.png);
+    background-size: 160px 160px;
+  }
+}
+
+.icon_fl {
+  display: block;
+  float: left;
+}
+
+.icon_fr {
+  display: block;
+  float: left;
+}
+
+.icon_inline {
+  margin-top: -2px;
+}
+
+.icon_no-text {
+  margin-right: 0;
+  text-indent: -10000px;
+}
+
+.icon_share { margin-top: -6px; margin-right: -2px; background-position: 0 0; }
+.icon_share_white { margin-top: -6px; margin-right: -2px; background-position: -20px 0; }
+
+.icon_like { background-position: 0 -20px; }
+.icon_like_white { background-position: -20px -20px; }
+
+.icon_quote { margin-top: -6px; margin-right: -2px; background-position: 0 -40px; }
+.icon_quote_white { margin-top: -6px; margin-right: -2px; background-position: -20px -40px; }
+
+.icon_tag { background-position: 0 -60px; }
+.icon_tag_white { background-position: -20px -60px; }
+
+.icon_user { background-position: 0 -80px; }
+.icon_user_white { background-position: -20px -80px; }
+
+
+.state_active {
+  .icon_cover {@extend .icon_cover_black;}
+  .icon_grid {@extend .icon_grid_black;}
+  .icon_list {@extend .icon_list_black;}
+}

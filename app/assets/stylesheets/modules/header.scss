@@ -1,0 +1,86 @@
+/* -- base -- */
+
+.header {
+  @extend .cf;
+  position: relative;
+  padding-bottom: .5em;
+  vertical-align: bottom;
+}
+
+
+
+/* -- children -- */
+
+.header__heading {
+  float:left;
+  width: 76%;
+  @extend .heading;
+}
+
+.header__heading_full {
+  float: none;
+  display: block;
+  width: auto;
+}
+
+
+.header__actions{
+  text-align: right;
+  float:right;
+  width: 22%;
+  .button {display: block;}
+}
+
+.header__actions_bottom {
+  position: absolute;
+  right: 0;
+  bottom: .6em;
+}
+
+.header__actions_pagination {
+  margin: -.5em;
+  width: auto;
+  .button {
+     background: none transparent;
+     margin: -1px;
+     @include border-radius (0);
+     @include box-shadow (inset 1px 0 0 rgba(255,255,255,.1));
+     &:hover {background: none transparent;}
+     &:active {@include box-shadow (inset 1px 5px 0 rgba(0,0,0,.15));}
+   }
+}
+
+
+
+/* -- extentions -- */
+.header_overline {
+  border-top: 1px solid #DDDDDD;
+  padding-top: .857em;
+  padding-bottom: .857em;
+}
+
+.header_underline {
+  border-bottom: 1px solid #DDDDDD;
+  padding-bottom: .5em;
+}
+
+.header_actions-half {
+  .header__heading {width: 50%;}
+  .header__actions {width: 46%;}
+}
+
+.header_bar { 
+  padding: 0.5em .5em 0.5em .857em;
+  line-height: 26px;
+  vertical-align: middle;
+  border: 1px solid;
+  @extend .bg_1;
+  .button { display: block; @extend .bg_1__item; }
+}
+
+.header_bar .header__heading { line-height: inherit; }
+
+.header_bar_actions-left {
+  padding: 0.5em .857em 0.5em .5em;
+  .header__actions {float: left; margin-right: 2%;}
+}

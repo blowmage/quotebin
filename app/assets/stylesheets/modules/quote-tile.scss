@@ -1,0 +1,66 @@
+.quote-tile {
+  padding: .857em;
+  @include column-break-inside(avoid);
+}
+
+.quote-tile__body{
+  position: relative;
+  background: #fff;
+  @include border-radius(4px);
+  padding: 1.714em;
+  color: #aaa;
+}
+
+.quote-tile__header {
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 2px;
+  line-height: 1em;
+  @extend .cf;
+}
+
+.quote-tile__actions {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 60px;
+}
+
+.quote-tile__title {
+  display: block;
+  margin: 16px 0;
+  color: #333;
+  font-size: 1.42em;
+  line-height: 1.4em;
+}
+
+.quote-tile__footer {
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 2px;
+  @extend .font_proxima;
+  line-height: 1em;
+}
+
+.quote-tile__author {
+  font-weight: bold;
+  color: #333;
+}
+
+.quote-tile__source {
+  color: #aaa;
+}
+
+@media screen and (max-width: 1400px) {
+  .quote-tile__bullet {display: none;}
+  .quote-tile__footer {line-height: 1.5em;}
+  .quote-tile__author {display: block;}
+  .quote-tile__source {display: block;}
+}
+
+@media screen and (max-width: 720px) {
+  .quote-tile{
+    padding: 0;
+    margin: 1px -.857em;
+    @include border-radius(0);}
+}

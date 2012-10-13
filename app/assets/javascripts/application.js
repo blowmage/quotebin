@@ -11,5 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery_easytabs
+//= require jquery_hashchange
 //= require jquery_ujs
 //= require_tree .
