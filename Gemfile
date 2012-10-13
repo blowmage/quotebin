@@ -17,6 +17,7 @@ gem 'capistrano'
 gem 'pg'
 gem 'devise'
 gem "socialization"
+gem 'gravatar_image_tag'
 
 group :development, :test do
   gem "minitest-rails"
