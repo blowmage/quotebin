@@ -17,3 +17,7 @@
 
 # ignore my rvm file
 .rvmrc
+
+*.scssc
+
+styles/sass/.DS_Store
