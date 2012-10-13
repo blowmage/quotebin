@@ -1,8 +1,10 @@
 class QuotesController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /quotes
   # GET /quotes.json
   def index
-    @quotes = Quote.all
+    @quotes = current_user.quotes.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +15,7 @@ class QuotesController < ApplicationController
   # GET /quotes/1
   # GET /quotes/1.json
   def show
-    @quote = Quote.find(params[:id])
+    @quote = current_user.quotes.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,7 +26,7 @@ class QuotesController < ApplicationController
   # GET /quotes/new
   # GET /quotes/new.json
   def new
-    @quote = Quote.new
+    @quote = current_user.quotes.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +36,13 @@ class QuotesController < ApplicationController
 
   # GET /quotes/1/edit
   def edit
-    @quote = Quote.find(params[:id])
+    @quote = current_user.quotes.find(params[:id])
   end
 
   # POST /quotes
   # POST /quotes.json
   def create
-    @quote = Quote.new(params[:quote])
+    @quote = current_user.quotes.new(params[:quote])
 
     respond_to do |format|
       if @quote.save
@@ -56,7 +58,7 @@ class QuotesController < ApplicationController
   # PUT /quotes/1
   # PUT /quotes/1.json
   def update
-    @quote = Quote.find(params[:id])
+    @quote = current_user.quotes.find(params[:id])
 
     respond_to do |format|
       if @quote.update_attributes(params[:quote])
@@ -72,7 +74,7 @@ class QuotesController < ApplicationController
   # DELETE /quotes/1
   # DELETE /quotes/1.json
   def destroy
-    @quote = Quote.find(params[:id])
+    @quote = current_user.quotes.find(params[:id])
     @quote.destroy
 
     respond_to do |format|

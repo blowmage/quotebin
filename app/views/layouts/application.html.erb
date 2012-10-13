@@ -17,6 +17,7 @@
       <li><%= link_to "home", root_path %></li>
       <% if signed_in?(:user) -%>
       <li><%= link_to "profile", profile_path %></li>
+      <li><%= link_to "quotes", quotes_path %></li>
       <li><%= link_to "logout", destroy_user_session_path, method: :delete,
                                                            data:   { :confirm => "You sure?" } %></li>
       <% else -%>

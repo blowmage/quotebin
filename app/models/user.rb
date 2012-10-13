@@ -2,7 +2,7 @@ require "reserved/usernames"
 require "email_validator"
 
 class User < ActiveRecord::Base
-  has_many :quotes
+  has_many :quotes, foreign_key: :owner_id
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,

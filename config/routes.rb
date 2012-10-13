@@ -1,6 +1,7 @@
 Quotebin::Application.routes.draw do
   root to: "home#index"
-  resources :quotes
+  # Quotes
+  resources :quotes, path: "profile/quotes"
   # Profile
   get "profile" => "home#profile", as: :profile
   # Devise
