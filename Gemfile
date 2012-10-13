@@ -13,3 +13,7 @@ gem 'unicorn'
 gem 'capistrano'
 gem 'pg'
 gem 'devise'
+
+group :development, :test do
+  gem "minitest-rails"
+end
