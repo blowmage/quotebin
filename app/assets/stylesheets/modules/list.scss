@@ -58,8 +58,8 @@ Styleguide 3.0
   .list__item {
     line-height: 30px;
     height: 30px;
-    border-top: 1px dotted #93c9b2;
-    a {display: block;}
+    border-top: 1px dotted #e7fff4;
+    a {display: block; color: #c3f8e1; &:hover{color: #fff;}}
   }
 }
 
@@ -71,17 +71,16 @@ Styleguide 3.0
   width: 100%;
   margin-top: -1px;
   .list__item {
-    background: #42b482;
-    border-bottom: 1px solid #2e9d6c;
+    background: #32a371;
+    border-bottom: 1px solid #b7f9dc;
     font-size: 1.28em;
-    line-height: 50px;
     padding-left: 24px;
-    a {color: #fff; display: block;}
+    a {color: #fff; display: block; padding: 10px 0 11px 0;}
     &:hover {background: #44c18a;}
     &:last-child {border-bottom: 0;}
   }
   .list__item_action {
-    background: #34a875;
+    background: #218157;
   }
 }
 

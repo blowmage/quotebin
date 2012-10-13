@@ -3,7 +3,7 @@
   padding: 1.714em;
   @extend .cf;
   @extend .font_proxima;
-  background: #72c8a2;
+  background: #37aa77;
 }
 
 .user-box__main {
@@ -32,7 +32,7 @@
     padding-bottom: 0;
     overflow: hidden;
     @include transform3d(0);
-    @include transition(all .3s linear);
+    @include transition(all .2s linear);
     &.state_active {height: auto; padding: 1.714em;}
   }
 }

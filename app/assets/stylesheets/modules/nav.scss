@@ -16,9 +16,9 @@ Styleguide 12.0
 .nav{
 	@extend .cf;
 	@extend .font_proxima;
-	.nav__item {float:left;list-style:none;}
+	.nav__item {float:left;list-style:none;padding-left:.857em;padding-right:.857em;}
 	.nav__button {margin-top:5px;margin-left:.4em;margin-right:.4em;}
-	.nav__link {display:block;padding-left:.857em;padding-right:.857em;}
+	.nav__link {display:block;}
   .nav__input {display: block; padding: 5px;}
 	.icon { @extend .icon_inline; }
 }

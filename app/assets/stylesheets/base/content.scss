@@ -2,16 +2,18 @@
 
 .cf:before, .cf:after {content:""; display:table;} .cf:after {clear:both;} .cf {zoom:1;}
 
+html, body {height: 100%;}
+
 body {
   font: .875em/1.4em "ff-tundra-web", georgia, serif;
-  background: #ddede6;
+  background: #f3f3f3;
   color: #333;
   -webkit-text-size-adjust: none
 }
 
 img {display: block; margin: 0; padding: 0; border: 0;}
 
-a { color: #42b482; text-decoration: none; }
+a { color: #32a371; text-decoration: none; }
 a:hover { color: #54cc97; }
 
 .font_abril {

@@ -52,6 +52,9 @@
 .icon_user { background-position: 0 -80px; }
 .icon_user_white { background-position: -20px -80px; }
 
+.icon_edit { background-position: 0 -100px; }
+.icon_edit_white { background-position: -20px -100px; }
+
 
 .state_active {
   .icon_cover {@extend .icon_cover_black;}

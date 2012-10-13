@@ -151,31 +151,33 @@
   @extend .cf;
 }
 
-@media screen and (max-width: 780px) {
-  .quote-creator__author {
-    margin-bottom: .857em;
-  }
-  .quote-creator__author, .quote-creator__source {
-    float: none;
-    width: 100%;
-    padding: 0;
-  }
-  .quote-creator__quote {
-    top: 52px;
-    bottom: 168px;
-  }
+@media screen and (max-width: 700px) {
   .quote-creator__wrapper {
     top: 12px;
     left: 12px;
     right: 12px;
-    bottom: 12px;
+    bottom: 24px;
   }
-  .quote-creator__input {
-    font-size: 2em;
+  .quote-creator__input { font-size: 1.42em;}
+  .quote-creator__quote { top: 52px; bottom: 116px;}
+  .quote-creator__author{ padding-right: .428em; }
+  .quote-creator__source { padding-left: .428em; }
+}
+
+@media screen and (max-width: 500px) {
+  .quote-creator__quote {
+    top: 52px;
+    bottom: 168px;
   }
   .quote-creator__markdown-tip {
     @include border-radius(0);
     left: 0; 
     text-align: center;
+  }
+  .quote-creator__author{ margin-bottom: .857em; }
+  .quote-creator__author, .quote-creator__source {
+    float: none;
+    width: 100%;
+    padding: 0;
   }
 }
