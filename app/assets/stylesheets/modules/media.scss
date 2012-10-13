@@ -68,7 +68,7 @@ Styleguide 6.0
       left: -13px;
       width: 14px;
       height: 25px;
-      background: image-url("no-repeat.png") no-repeat -112px -1091px;
+      background: image-path("no-repeat.png") no-repeat -112px -1091px;
     }
   }
 
@@ -119,7 +119,7 @@ Styleguide 6.0
 @media screen and (-webkit-min-device-pixel-ratio: 2) {
   .media_bubble {
     .media__content__wrapper:before {
-      background-image: image-url("no-repeat-2x.png");
+      background-image: image-path("no-repeat-2x.png");
       background-size: 200px 3816px;
     }
   }
