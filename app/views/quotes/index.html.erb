@@ -14,7 +14,7 @@
 
 <% @quotes.each do |quote| %>
   <tr>
-    <td><%= quote.quotation %></td>
+    <td><%= markdown(quote.quotation) %></td>
     <td><%= show_tag_list(quote) %></td>
     <td><%= quote.author %></td>
     <td><%= quote.source %></td>

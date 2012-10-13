@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'acts-as-taggable-on'
-
+gem 'redcarpet'
 gem 'rails', '3.2.8'
 
 group :assets do
