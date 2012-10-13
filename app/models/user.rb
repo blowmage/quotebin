@@ -21,5 +21,8 @@ class User < ActiveRecord::Base
                        exclusion:  { in: Reserved::USERNAMES,
                                      message: "is reserved" }
   validates :name,     presence:   true
-  
+
+  def self.find_by_username nick
+    where("username ILIKE ?", nick).first
+  end
 end
