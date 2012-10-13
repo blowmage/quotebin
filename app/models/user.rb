@@ -2,6 +2,8 @@ require "reserved/usernames"
 require "email_validator"
 
 class User < ActiveRecord::Base
+  has_many :quotes
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable

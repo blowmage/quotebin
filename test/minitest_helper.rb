@@ -17,6 +17,10 @@ class MiniTest::Rails::ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
 end
 
+class MiniTest::Rails::ActionController::TestCase
+  include Devise::TestHelpers
+end
+
 # Do you want all existing Rails tests to use MiniTest::Rails?
 # Comment out the following and either:
 # A) Change the require on the existing tests to `require "minitest_helper"`

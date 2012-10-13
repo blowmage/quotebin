@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121013004002) do
+ActiveRecord::Schema.define(:version => 20121013013254) do
+
+  create_table "quotes", :force => true do |t|
+    t.integer  "owner_id"
+    t.text     "quotation"
+    t.string   "author"
+    t.string   "source"
+    t.string   "url"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "name"
