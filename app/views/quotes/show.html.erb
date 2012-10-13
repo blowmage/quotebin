@@ -1,15 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Owner:</b>
-  <%= @quote.owner_id %>
+  <b>Quotation:</b>
+  <%= markdown(@quote.quotation) %>
 </p>
 
 <p>
-  <b>Quotation:</b>
-  <%= @quote.quotation %>
+  <b>Tags:</b>
+  <%= show_tag_list(@quote) %>
 </p>
-
 <p>
   <b>Author:</b>
   <%= @quote.author %>

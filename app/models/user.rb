@@ -3,6 +3,12 @@ require "email_validator"
 
 class User < ActiveRecord::Base
   has_many :quotes, foreign_key: :owner_id
+  has_many :taggings, class_name: "ActsAsTaggableOn::Tagging"
+  has_many :tags, through: :taggings, class_name: "ActsAsTaggableOn::Tag"
+
+  acts_as_followable
+  acts_as_follower
+  acts_as_liker
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,

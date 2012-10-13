@@ -2,8 +2,8 @@
 
 <table>
   <tr>
-    <th>Owner</th>
     <th>Quotation</th>
+    <th>Tags</th>
     <th>Author</th>
     <th>Source</th>
     <th>Url</th>
@@ -14,8 +14,8 @@
 
 <% @quotes.each do |quote| %>
   <tr>
-    <td><%= quote.owner_id %></td>
-    <td><%= quote.quotation %></td>
+    <td><%= markdown(quote.quotation) %></td>
+    <td><%= show_tag_list(quote) %></td>
     <td><%= quote.author %></td>
     <td><%= quote.source %></td>
     <td><%= quote.url %></td>

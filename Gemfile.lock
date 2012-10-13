@@ -28,6 +28,8 @@ GEM
     activesupport (3.2.8)
       i18n (~> 0.6)
       multi_json (~> 1.0)
+    acts-as-taggable-on (2.3.3)
+      rails (~> 3.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.3)
@@ -37,6 +39,7 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    chunky_png (1.2.6)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -44,6 +47,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.3.3)
+    compass (0.12.2)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
+    compass-rails (1.0.3)
+      compass (>= 0.12.2, < 0.14)
     devise (2.1.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -52,6 +61,8 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    fssm (0.2.9)
+    gravatar_image_tag (1.1.3)
     highline (1.6.15)
     hike (1.2.1)
     i18n (0.6.1)
@@ -109,11 +120,14 @@ GEM
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
+    redcarpet (2.2.1)
     sass (3.2.1)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    socialization (0.4.0)
+      activerecord
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -138,13 +152,18 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   capistrano
   coffee-rails (~> 3.2.1)
+  compass-rails
   devise
+  gravatar_image_tag
   jquery-rails
   minitest-rails
   pg
   rails (= 3.2.8)
+  redcarpet
   sass-rails (~> 3.2.3)
+  socialization
   uglifier (>= 1.0.3)
   unicorn

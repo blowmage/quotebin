@@ -1,0 +1,168 @@
+.quote-tile {
+  padding: .857em;
+  @include column-break-inside(avoid);
+}
+
+@media screen and (max-width: 1400px) {
+  .quote-tile__bullet {display: none;}
+  .quote-tile__footer {line-height: 1.5em;}
+  .quote-tile__author {display: block; margin-bottom: 6px;}
+  .quote-tile__source {display: block;}
+}
+
+@media screen and (max-width: 720px) {
+  .quote-tile{
+    padding: 0;
+    margin: 1px -.857em;
+    @include border-radius(0);}
+}
+
+
+.quote-tile__body{
+  position: relative;
+  background: #fff;
+  @include border-radius(4px);
+  padding: 1.714em;
+  color: #aaa;
+}
+
+.quote-tile__header {
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 2px;
+  line-height: 1em;
+  @extend .cf;
+}
+
+.quote-tile__actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 60px;
+}
+
+.quote-tile__title {
+  display: block;
+  margin: 16px 0;
+  color: #333;
+  font-size: 1.42em;
+  line-height: 1.4em;
+}
+
+.quote-tile__footer {
+  text-transform: uppercase;
+  font-size: 0.85em;
+  letter-spacing: 2px;
+  @extend .font_proxima;
+  line-height: 1em;
+}
+
+.quote-tile__author {
+  font-weight: bold;
+  color: #333;
+}
+
+.quote-tile__source {
+  color: #aaa;
+}
+
+.quote-tile__contributor {
+  float: left;
+  margin-top: 1.714em;
+}
+
+.quote-tile__contributor__info{
+  float: left;
+  width: 50%;
+}
+
+.quote-tile__contributor__name{
+  @extend .media__content;
+}
+
+.quote-tile__contributor__name__header {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85em;
+  line-height: 1em;
+  opacity: .5;
+}
+
+.quote-tile__contributor__name__body {
+  display: block;
+  @extend .font_proxima;
+  font-weight: bold;
+}
+
+.quote-tile__contributor__name__action {
+  margin-top: 20px;
+  width: 150px;
+}
+
+.quote-tile__contributor__metadata {
+  width: 50%;
+  float: right;
+}
+
+.quote-tile__contributor__metadata__item {
+  float: right;
+  display: block;
+  background: #fff;
+  height: 80px;
+  width: 80px;
+  text-align: center;
+  @extend .font_proxima;
+  font-weight: bold;
+  font-size: 0.85em;
+  @include border-radius(4px);
+  color: #333;
+  margin-left: 24px;
+}
+
+.quote-tile__contributor__metadata__item__number{
+  padding-top: 20px;
+  display: block;
+  font-size: 2em;
+}
+
+.quote-tile__contributor__metadata__item__label {
+  display: block;
+}
+
+@media screen and (max-width: 1100px) {
+  .quote-tile__contributor__metadata__item {margin-left: 0; height: 25px; line-height: 25px; margin-bottom: 1px; float: none; width: auto;}
+  .quote-tile__contributor__metadata__item__number, .quote-tile__contributor__metadata__item__label {display: inline; font-size: 1em;}
+}
+
+@media screen and (max-width: 950px) {
+  .quote-tile__contributor__info {margin-bottom: 12px;}
+  .quote-tile__contributor__info, .quote-tile__contributor__metadata {
+    float: none; width: auto;
+  }
+}
+
+.quote-tile_large {
+  padding: 6.856em;
+  .quote-tile__title {
+    font-size: 3em;
+  }
+  .quote-tile__header, .quote-tile__footer {
+    font-size: 1em;
+  }
+  .quote-tile__actions {
+    width: 90px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .quote-tile_large {
+    padding: 1.714em;
+    .quote-tile__title {
+      font-size: 1.42em;
+    }
+    .quote-tile__header, .quote-tile__footer {
+    font-size: 0.85em;
+    }
+  }
+}

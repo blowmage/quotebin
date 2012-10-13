@@ -1,0 +1,38 @@
+.user-box {
+  margin: 0 -1.714em;
+  padding: 1.714em;
+  @extend .cf;
+  @extend .font_proxima;
+  background: #37aa77;
+}
+
+.user-box__main {
+  @extend .cf;
+  margin-bottom: 6px;
+}
+
+.user-box__avatar {
+  float: left;
+  margin-right: 12px;
+}
+
+.user-box__name {
+  @extend .media__content;
+  font-weight: bold;
+}
+
+.user-box__name-link {
+  line-height: 30px;
+}
+
+@media screen and (max-width: 780px) {
+  .user-box {
+    height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    @include transform3d(0);
+    @include transition(all .2s linear);
+    &.state_active {height: auto; padding: 1.714em;}
+  }
+}

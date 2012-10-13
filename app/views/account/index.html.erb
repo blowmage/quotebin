@@ -1,5 +1,21 @@
-<h1>Quotes for <%= account.name %></h1>
+<header class="page__title">
+  My Quotes
+</header>
+<section class="page__main__tabs nav-bar nav-bar_main-tabs">
+  <ul class="nav">
+    <li class="nav__item">
+      <a class="nav__link b" href="#">Likes</a>
+    </li>
+    <li class="nav__item">
+      <a class="nav__link" href="#">Recency</a>
+    </li>
+  </ul>
+</section>
 
-<% account.quotes.limit(10).each do |quote| %>
-  <%= render quote %>
-<% end %>
+<section class="page__main__body page__main__body_columns c">
+
+  <% account.quotes.limit(10).each do |quote| %>
+    <%= quote_tile quote %>
+  <% end %>
+
+</section>

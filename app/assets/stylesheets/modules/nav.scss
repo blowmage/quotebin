@@ -1,0 +1,190 @@
+/*
+Nav. (.nav) A collection of links to navigate within a site or a content section. 
+Can be in vertical or horizontal (defaults to horizontal), tabs, pills, links or any other form
+
+.nav_vert           - (vertical)
+.nav_tabs            - (tab section)
+.nav_tabs.nav_vert   - (tab section vertical)
+.nav_pills           - (rounded pills)
+.nav_pills.nav_vert  - (rounded pills vertical)
+.nav_toolbar  		 - (toolbar for wysiwyg)
+
+
+Styleguide 12.0
+*/
+
+.nav{
+	@extend .cf;
+	@extend .font_proxima;
+	.nav__item {float:left;list-style:none;padding-left:.857em;padding-right:.857em;}
+	.nav__button {margin-top:5px;margin-left:.4em;margin-right:.4em;}
+	.nav__link {display:block;}
+  .nav__input {display: block; padding: 5px;}
+	.icon { @extend .icon_inline; }
+}
+
+
+
+
+// nav_horz
+.nav_horz {
+	height:35px;
+ 	line-height:35px;
+	color: #333;
+	border:1px solid #ccc;
+	background-color: #e7e7e7;
+	border-radius: 4px;
+	.nav__link {
+		padding:0 10px;
+		&:hover{background:rgba(0,0,0,.02);};
+	}
+
+}
+.nav_horz.sticky {
+	width:100%;
+	left:0;
+	border-radius:0 0 4px 4px;
+	border-top:none;
+}
+
+
+
+
+// nav_vert
+.nav_vert{
+	.nav__item  {float:none;padding:2px 0;}
+	.nav-link,.nav__item:first-child .nav__link, .nav__item:last-child .nav__link { padding: 0;}
+		.nav__button {}
+		.nav__link {}
+		.nav__link:hover {}
+		.nav__divider{}
+		.nav__item_dropdown{}
+}
+
+
+
+
+// nav_pills
+.nav_pills{
+	.nav__item{padding:0 5px;}
+	.nav__link,.nav__item:first-child .nav__link, .nav__item:last-child .nav__link {
+		padding:0 .857em;
+		height:28px;
+		line-height:28px;
+		display: block;
+		border: 1px solid transparent;
+		margin-bottom: 6px;
+  	border-radius: 20px;
+  	font-weight: bold;
+		&:hover {background:#efefef;}
+	}
+	.nav__link { &.selected {@extend .bg_3;}}
+}
+
+
+// nav_tabs
+.nav_tabs {
+	position: relative;
+	@extend .cf;
+	&:before {
+
+	}
+	.nav__item{
+		margin-bottom: -1px;
+		margin-right: .857em;
+		padding:0;
+		text-align: center;
+	}
+	.nav__item:first-child .nav__link {padding: 0 .857em;}
+	.nav__item:first-child .nav__button {margin-left:.4em;}
+	.nav__item:last-child .nav__button{margin-right:.4em;}
+	.nav__link{
+    	font-weight: bold;
+		height:38px;
+		line-height:38px;
+		padding: 0 12px;
+		margin:0;
+	    color: #666;
+	    background-color: #f5f5f5;
+	    border: 1px solid #ccc;
+	    border-radius: 4px 4px 0 0;
+	 	&.selected{
+	 		color: #222;
+			background-color: #ffffff;
+			border: 1px solid #ccc;
+			border-bottom-color: transparent;
+			cursor: default;
+  		&:hover { cursor: default; background-color: #fff; }
+  	}
+		&:hover {
+			color: #333;
+			background-color: #fff;
+			cursor: default;	
+		}
+	}
+}
+
+.nav_tabs_full {
+	.nav__item {
+		@extend .g;
+		width: 50%;
+		margin: 0;
+		padding: 0 .857em;
+	}
+	.nav__link {
+		display: block;
+		padding: 0 4px;
+	}
+}
+
+.nav_tabs_full_3 {
+	.nav__item {width: 33.3333%;}
+}
+.nav_tabs_full_4 {
+	.nav__item {width: 25%;}
+}
+.nav_tabs_full_5 {
+	.nav__item {width: 20%%;}
+}
+
+
+
+// nav_tabs-line
+.nav_tabs-line {
+	border-bottom: 1px solid #ccc;
+	.nav__link.selected { border-bottom-color: #ccc;}
+}
+
+
+// nav_tabs.nav_vert
+.nav_tabs.nav_vert {
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	.nav__item{
+		margin-bottom: 0;
+		padding:0;
+		margin-right:0;
+		&:first-child .nav__link {border-radius: 3px 3px 0 0;}
+		&:last-child .nav__link {border-radius: 0 0 3px 3px;}
+	}
+	.nav__item:first-child .nav__link,.nav__item:last-child .nav__link {padding:0 0.857em;}
+	.nav__link{
+		height:38px;
+		line-height:38px;
+		padding: 0 12px;
+		margin:0;
+		border: none;
+		border-radius: 0;
+		&.selected {
+			position: relative;
+			z-index: 1;
+			border-width: 1px;
+			border-style: solid;
+			margin-left: -1px;
+			margin-right: -1px;
+		}
+	 	&:hover {
+	 		background-color:#eeeeee;
+	 	}
+	}
+}

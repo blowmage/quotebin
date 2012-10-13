@@ -1,0 +1,43 @@
+.nav-bar{
+  height: 50px;
+  position: relative;
+  z-index: 1000;
+  line-height: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-bar__nav{float:left;}
+.nav-bar__nav_right{float:right;}
+
+.nav-bar__branding {
+  line-height:50px;
+  font-size:22px;
+}
+
+.nav-bar__branding {
+  line-height:50px;
+  font-size:22px;
+}
+
+.nav-bar__branding {
+  line-height:50px;
+  font-size:22px;
+}
+    
+.nav__item:first-child .dropdown__menu {
+  left: 0;
+}
+  
+.nav__item .dropdown__menu.dropdown__menu_right {
+  left: auto;
+  right: 0;
+}
+
+.nav-bar_main-tabs {
+  position: relative;
+  z-index: 0;
+  margin: 0 -.857em;
+  padding: 0 .857em;
+}

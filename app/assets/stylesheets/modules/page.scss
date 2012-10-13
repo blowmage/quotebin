@@ -1,0 +1,141 @@
+.page {
+  position: relative;
+}
+
+.page__branding {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  background: #32a371;
+  margin: -1.714em -1.714em 0 -1.714em;
+  padding: 0 1.714em;
+  border-bottom: 1px solid #1f8c5c;
+}
+
+.page__branding__action {
+  display: none;
+  .button {display: none;}
+}
+
+.page__logo {
+  border: none;
+  display: block;
+  color: #fff;
+  font-size: 1.4em;
+  @extend .font_abril;
+  &:hover {color: #fff; opacity: .7;}
+}
+
+.page__body{
+  @extend .cf;
+  padding-top:40px;
+}
+
+.page__sidebar{
+  position: fixed;
+  height: 100%;
+  width: 240px;
+  padding: 1.714em;
+  background: #3fb581;
+  color: #fff;
+}
+
+.page__title {
+  font-weight: bold;
+  height: 50px;
+  position: relative;
+  line-height: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background: #fff;
+  z-index: 0;
+  margin: 0 -.857em;
+  padding: 0 1.714em;
+  @extend .font_proxima
+}
+
+.page__wrapper{
+  @extend .cf;
+  z-index: 1;
+  position: relative;
+}
+
+.page__wrapper_grid-view {
+  max-width: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  .page__wrapper { padding: 0 .9em;}
+}
+
+.page__main {
+  margin-left: 240px;
+  padding-left: 0.857em;
+  padding-right: 0.857em;
+}
+
+.page__main__header {
+  margin: 0 -0.857em;
+}
+
+.page__search {
+  z-index: 1;
+  position: relative;
+}
+
+.page__main__body {
+  padding: 0.857em 0;
+}
+
+.page__main__body_columns {
+  @include columns(auto 2);
+  @include column-gap(0);
+}
+
+@media screen and (max-width: 1000px) {
+  .page__main__body_columns {
+    @include columns(auto 1);  
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .page__main__body_columns {
+    @include columns(auto 3);  
+  }
+}
+
+@media screen and (min-width: 2300px) {
+  .page__main__body_columns {
+    @include columns(auto 4);  
+  }
+}
+
+@media screen and (max-width: 780px) and (min-width: 720px) {
+  .page__main__body_columns {
+    @include columns(auto 2);  
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .page__main__body {
+    padding: 0;
+  }
+  .page__sidebar {
+    position: relative;
+    height: auto;
+    float: none;
+    width: auto;
+    padding-bottom: 0;
+  }
+  .page__logo {
+    display: inline-block;
+  }
+  .page__main {
+    margin-left: 0;
+  }
+  .page__branding__action {
+    float: right;
+    display: block;
+    .button.state_active {display: inline-block;}
+  }
+}

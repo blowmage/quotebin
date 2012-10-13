@@ -1,3 +1,68 @@
-<h1>Quote for <%= account.name %></h1>
+<article class="quote-tile quote-tile_large">
+  <div class="quote-tile__body">
+    <div class="quote-tile__actions">
+      <div class="button-bar button-bar_3">
+        <a class="button" href=""><i class="icon icon_edit icon_no-text"></i></a>
+        <a class="button" href=""><i class="icon icon_share icon_no-text"></i></a>
+        <a class="button" href=""><i class="icon icon_like icon_no-text"></i></a>
+      </div>
+    </div>
+    <header class="quote-tile__header">
+      <span>In</span>
+      <%= tag_list quote %>
+    </header>
+    <a href="" class="quote-tile__title">
+      "<%= quote.quotation %>"
+    </a>
+    <footer class="quote-tile__footer">
+      <a href="#" class="quote-tile__author"><%= quote.author %></a>
+      <span class="quote-tile__bullet">&bull;</span>
+      <a href="#" class="quote-tile__source"><%= quote.source %></a>
+    </footer>
+  </div>
 
-<%= render quote %>
+  <section class="quote-tile__contributor">
+    <section class="quote-tile__contributor__info">
+      <figure class="figure figure_avatar figure_80 user-box__avatar">
+        <%= link_to account_path(quote.owner.username) do %>
+        <%= gravatar_image_tag(quote.owner.email, :alt => quote.owner.name, class: 'figure__image', gravatar: {size: 80}) %>
+        <% end %>
+      </figure>
+      <div class="quote-tile__contributor__name">
+        <span class="quote-tile__contributor__name__header">Contributed By</span>
+        <%= link_to quote.owner.name, account_path(quote.owner.username),
+                    class: "quote-tile__contributor__name__body" %>
+        <%= button_to "Follow", follow_username_path(quote.owner.username),
+                      method: :post, remote: true,
+                      class: "quote-tile__contributor__name__action button button_primary" %>
+      </div>
+    </section>
+    <section class="quote-tile__contributor__metadata">
+      <a href="#" class="quote-tile__contributor__metadata__item">
+        <span class="quote-tile__contributor__metadata__item__number">
+          <%= quote.owner.followees(User).count %>
+        </span>
+        <span class="quote-tile__contributor__metadata__item__label">
+          Followers
+        </span>
+      </a>
+      <a href="#" class="quote-tile__contributor__metadata__item">
+        <span class="quote-tile__contributor__metadata__item__number">
+          <%= quote.owner.followers(User).count %>
+        </span>
+        <span class="quote-tile__contributor__metadata__item__label">
+          Following
+        </span>
+      </a>
+      <a href="#" class="quote-tile__contributor__metadata__item">
+        <span class="quote-tile__contributor__metadata__item__number">
+          <%= quote.owner.quotes.count %>
+        </span>
+        <span class="quote-tile__contributor__metadata__item__label">
+          Quotes
+        </span>
+      </a>
+    </section>
+
+  </section>
+</article>

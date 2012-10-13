@@ -1,0 +1,38 @@
+/*
+Figure
+
+.figure_avatar - used for images
+.figure_avatar_nav-bar - used for the avatar in the user nav bar
+
+Styleguide 2.0
+*/
+
+.figure {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  .figure__image {
+    display: block;
+    width: 100%;
+  }
+}
+
+// sizes
+.figure_16 {width: 16px;}
+.figure_24 {width: 20px;}
+.figure_30 {width: 32px;}
+.figure_48 {width: 48px;}
+.figure_60 {width: 60px;}
+.figure_80 {width: 80px;}
+.figure_120 {width: 120px;}
+.figure_180 {width: 180px;}
+.figure_full {width: 100%;}
+
+
+
+
+.figure_avatar {
+  .figure__image {
+    border-radius: 4px;
+  }
+}
