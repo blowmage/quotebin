@@ -25,7 +25,7 @@
     <section class="quote-tile__contributor__info">
       <figure class="figure figure_avatar figure_80 user-box__avatar">
         <%= link_to account_path(quote.owner.username) do %>
-        <%= gravatar_image_tag(current_user.email, :alt => current_user.name, class: 'figure__image', gravatar: {size: 80}) %>
+        <%= gravatar_image_tag(quote.owner.email, :alt => quote.owner.name, class: 'figure__image', gravatar: {size: 80}) %>
         <% end %>
       </figure>
       <div class="quote-tile__contributor__name">
