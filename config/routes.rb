@@ -1,5 +1,11 @@
 Quotebin::Application.routes.draw do
   root to: "home#index"
+  # Tags
+  get "tags/show"
+  get 'tags', to: "tags#index", as: 'tags'
+  get 'tag/:tag', to: 'tags#show', as: 'tag'
+  get ':username/tags', to: "account#tags", as: 'user_tags'
+  get ':username/tags/:tag', to: "account#tag", as: 'user_tag'
   # Quotes
   resources :quotes, path: "profile/quotes"
   # Profile
