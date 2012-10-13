@@ -5,7 +5,7 @@ describe SocialController do
     @david = users :david
     @mike  = users :mike
     @quote = @mike.quotes.first
-    @tag   = tags(:simplicity) #Tag.first #@quote.tags.first
+    @tag   = tags(:simplicity)
     sign_in @david
   end
 
