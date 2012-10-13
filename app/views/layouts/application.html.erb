@@ -99,11 +99,32 @@
   </aside>
 
   <div class="page__main">
-    <% flash.each do |type, msg| %>
-      <div class="<%= type %>"><%= msg %></div>
-    <% end %>
+    <header class="page__search page__main__header">
+      <input class="input_text_main-search input_text js-main-search" type="text" placeholder="Search Or Add Quotes">
+      <ul class="list list_main-search js-list-main-search">
+        <li class="list__item list__item_action js-add-quote list__add-quote m_show"><a class="font_proxima" href="#"><span class="b">Add Quote:</span> Aenean lacinia bibendum nulla sed consectetur.</a></li>
+        <li class="list__item"><a href="#">Donec ullamcorper nulla non metus auctor fringilla.</a></li>
+        <li class="list__item"><a href="#">Donec sed odio dui.</a></li>
+        <li class="list__item"><a href="#">Donec id elit non mi porta gravida at eget metus.</a></li>
+        <li class="list__item"><a href="#">Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</a></li>
+        <li class="list__item"><a href="#">Donec ullamcorper nulla non metus auctor fringilla.</a></li>
+        <li class="list__item"><a href="#">Donec sed odio dui.</a></li>
+        <li class="list__item"><a href="#">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</a></li>
+        <li class="list__item"><a href="#">Curabitur blandit tempus porttitor.</a></li>
+        <li class="list__item"><a href="#">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</a></li>
+        <li class="list__item"><a href="#">Curabitur blandit tempus porttitor.</a></li>
+        <li class="list__item list__item_action"><a class="font_proxima" href="#"><span class="b">Search:</span> Aenean lacinia bibendum nulla sed consectetur.</a></li>
+        <li class="list__item list__item_action js-add-quote list__add-quote m_hide"><a class="font_proxima" href="#"><span class="b">Add Quote:</span> Aenean lacinia bibendum nulla sed consectetur.</a></li>
+      </ul>
+    </header>
 
-    <%= yield %>
+    <section class="page__main__body c">
+      <% flash.each do |type, msg| %>
+        <div class="<%= type %>"><%= msg %></div>
+      <% end %>
+
+      <%= yield %>
+    </section>
   </div>
 
   <div class="quote-creator js-quote-creator">
