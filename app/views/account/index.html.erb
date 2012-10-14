@@ -1,15 +1,35 @@
-<header class="page__title">
-  My Quotes (<%= quotes.total_count %> total)
+<header class="page__title media">
+<div class="fl">
+  <figure class="figure figure_avatar figure_30 figure_inline mrm">
+    <a href="#"><img class="figure__image" src="assets/images/avatar.png"></a>
+  </figure>
+  <span>Jayden Anderson</span>
+</div>
+<div class="fr">
+  <a class="button button_primary button_inline" href="#">Follow</a>
+</div>
 </header>
-<section class="page__main__tabs nav-bar nav-bar_main-tabs">
-  <ul class="nav">
-    <li class="nav__item">
-      <a class="nav__link b" href="#">Likes</a>
-    </li>
-    <li class="nav__item">
-      <a class="nav__link" href="#">Recency</a>
-    </li>
-  </ul>
+<section class="page__main__tabs nav-bar nav-bar_main-tabs nav-bar_main-tabs_profile">
+<ul class="nav">
+  <li class="nav__item">
+    <a class="nav__link b box box_stat state_active" href="#">
+      <span class="box__header"><%= quotes.total_count %></span>
+      <span class="box__footer">Quotes</span>
+    </a>
+  </li>
+  <li class="nav__item">
+    <a class="nav__link b box box_stat" href="#">
+      <span class="box__header">10</span>
+      <span class="box__footer">Followers</span>
+    </a>
+  </li>
+  <li class="nav__item">
+    <a class="nav__link b box box_stat" href="#">
+      <span class="box__header">10</span>
+      <span class="box__footer">Following</span>
+    </a>
+  </li>
+</ul>
 </section>
 
 <section class="page__main__body page__main__body_columns c">
