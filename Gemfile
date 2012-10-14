@@ -22,6 +22,7 @@ gem 'devise'
 gem "socialization"
 gem 'gravatar_image_tag'
 gem "kaminari"
+gem 'whenever', require: false
 
 group :development, :test do
   gem "minitest-rails"
