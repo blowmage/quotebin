@@ -22,6 +22,7 @@ Styleguide 2.0
 .figure_24 {width: 20px;}
 .figure_30 {width: 32px;}
 .figure_48 {width: 48px;}
+.figure_50 {width: 50px;}
 .figure_60 {width: 60px;}
 .figure_80 {width: 80px;}
 .figure_120 {width: 120px;}
@@ -32,6 +33,13 @@ Styleguide 2.0
   .figure__image {
     border-radius: 4px;
   }
+}
+
+.figure_profile-avatar{
+  display: block;
+  float: left;
+  margin-right: 12px;
+  margin-left: -24px;
 }
 
 .figure_inline {

@@ -1,7 +1,7 @@
 <header class="page__title media">
 <div class="fl">
-  <figure class="figure figure_avatar figure_48 user-box__avatar">
-    <a href="<%= profile_path %>"><%= gravatar_image_tag(@account.email, :alt => @account.name, class: 'figure__image', gravatar: {size: 48}) %></a>
+  <figure class="figure figure_50 figure_profile-avatar">
+    <a href="<%= profile_path %>"><%= gravatar_image_tag(@account.email, :alt => @account.name, class: 'figure__image', gravatar: {size: 50}) %></a>
   </figure>
   <span><%= @account.name %></span>
 </div>
