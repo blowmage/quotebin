@@ -1,12 +1,27 @@
-<h2>Forgot your password?</h2>
-
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.submit "Send me reset password instructions" %></div>
-<% end %>
-
 <%= render "devise/shared/links" %>
+
+<div class="page__main__body">
+  <div class="box box_register">
+    <header class="box__header">
+      <h2 class="milli b heading">Forget password?</h2>
+      <p class="opacity_5 mtm">Enter your email &amp; we'll reset it.</p>
+    </header>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <section class="box__body">
+      <div class="text_small">
+        <%= devise_error_messages! %>
+      </div>
+      <div class="field mbm">
+        <%= f.label :email, :class => "field__label hidden" %>
+        <%= f.email_field :email, :class => "field__input input_text", :placeholder => "example@address.com" %>
+      </div>
+    </section>
+    <footer class="box__footer">
+      <%= f.submit "Reset", :class => "button button_primary fl" %>
+      <div class="fr box_register__footer__links">
+        <%= render "devise/shared/links" %>
+      </div>
+    </footer>
+  </div>
+  <% end %>
+</div>
