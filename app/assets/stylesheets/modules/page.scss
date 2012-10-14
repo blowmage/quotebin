@@ -51,7 +51,8 @@
   z-index: 0;
   margin: 0 -.857em;
   padding: 0 1.714em;
-  @extend .font_proxima
+  @extend .font_proxima;
+  border-bottom: 1px dashed #ddd;
 }
 
 .page__wrapper{
