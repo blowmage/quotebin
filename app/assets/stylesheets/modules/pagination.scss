@@ -1,13 +1,33 @@
 .pagination {
   text-align: center;
   display: block;
-  background: #fff;
-  padding: 12px;
-  @include border-radius(4px);
-  margin: 12px;
+  margin: 12px 24px;
 }
 
-.pagination a {
+.pagination span {
   @extend .button;
   @extend .button_inline;
+  @extend .button_square;
+  margin: 0 6px;
+  a {display: block;}
+}
+
+.pagination {
+  .current {
+    @extend .button_primary;
+  }
+
+  .gap {
+    color: #777;
+    opacity: .5;
+  }
+  .next, .prev {
+    a {
+      overflow: hidden;
+      @extend .icon;
+      @extend .icon_no-text;
+    }
+  }
+  .next a {@extend .icon_next_special;}
+  .prev a {@extend .icon_prev_special;}
 }
