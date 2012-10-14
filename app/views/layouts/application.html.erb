@@ -23,8 +23,13 @@
   <aside class="page__sidebar">
     <header class="page__branding">
       <a  href="<%= root_path %>" class="page__logo icon icon__logo"></a>
+
+      <div class="fr mlm hidden">
+        <%= link_to 'Add Quote', new_quote_path, class: "button button_inline button_opaque_black" %>
+      </div>
+      
       <div class="page__branding__action js-page-branding-action">
-        <a class="js-user-box-toggle button button_inline state_active" href="#">
+        <a class="js-user-box-toggle button button_opaque_white button_inline state_active" href="#">
           <i class="icon icon_user"></i>
           <span class="dropdown__arrow">&#x25BC;</span>
         </a>
@@ -33,7 +38,8 @@
           <span class="dropdown__arrow">&#x25B2;</span>
         </a>
       </div>
-    </header>    <a href="#" class="inverted js-add-quote">create</a>
+    </header>
+    <a href="#" class="inverted js-add-quote">create</a>
 
 
     <% if signed_in?(:user) -%>

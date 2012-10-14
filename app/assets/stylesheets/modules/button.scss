@@ -247,8 +247,10 @@ Styleguide 1.0
 }
 
 .button_opaque_black {
+  color: #fff;
   background: rgba(0,0,0,.5);
   &:hover {
+    color: #fff;
     background: rgba(0,0,0,.3);
   }
   &:active {
