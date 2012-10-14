@@ -10,8 +10,8 @@ class Quote < ActiveRecord::Base
 
   # Tried it with "unaccent" extension, but couldn't figure out the indexes
   pg_search_scope :search,
-    against: {quotation: 'A', author: 'B'},
-    associated_against: { tags: [:name]},
-    using: {tsearch: {dictionary: 'english'}}
+    against: { quotation: 'A', author: 'B', source: 'B' },
+    associated_against: { tags: [:name] },
+    using: { tsearch: { prefix: true } }
 
 end
