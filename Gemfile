@@ -4,6 +4,7 @@ gem 'acts-as-taggable-on'
 gem 'redcarpet'
 gem 'rails', '3.2.8'
 gem 'stemmer'
+gem 'newrelic_rpm'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
