@@ -21,3 +21,5 @@
 *.scssc
 
 styles/sass/.DS_Store
+
+app/assets/images/.DS_Store
