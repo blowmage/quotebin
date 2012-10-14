@@ -25,7 +25,7 @@
       <a  href="<%= root_path %>" class="page__logo icon icon__logo"></a>
 
       <div class="page__branding__action js-page-branding-action">
-        <a class="js-user-box-toggle button button_opaque_black button_inline state_active" href="#">
+        <a class="js-user-box-toggle button button_opaque_white button_inline state_active" href="#">
           <i class="icon icon_user"></i>
           <span class="dropdown__arrow">&#x25BC;</span>
         </a>
@@ -35,6 +35,7 @@
         </a>
       </div>
     </header>
+
 
     <% if signed_in?(:user) -%>
     <section class="user-box js-user-box">
@@ -62,6 +63,8 @@
           <span class="button__title">My Tags</span>
         </a>
       </div>
+      <a href="#" class="inverted js-add-quote button mtm">create</a>
+
     </section>
     <% else -%>
       <section class="user-box js-user-box">
