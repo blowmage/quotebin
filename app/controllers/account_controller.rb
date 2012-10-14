@@ -28,11 +28,11 @@ class AccountController < ApplicationController
   end
 
   def quotes
-    @quotes ||= account.quotes.page(params[:page]).per(20)
+    @quotes ||= account.quotes.includes(:owner).page(params[:page]).per(20)
   end
 
   def quote
-    @quote ||= account.quotes.find(params[:id])
+    @quote ||= account.quotes.includes(:owner).find(params[:id])
   end
 
   def require_account!

@@ -23,7 +23,7 @@ class TagsController < ApplicationController
   end
 
   def quotes
-    @quotes ||= Quote.tagged_with(tag_name).page(params[:page]).per(20)
+    @quotes ||= Quote.includes(:owner).tagged_with(tag_name).page(params[:page]).per(20)
   end
 
   def require_tag!

@@ -4,13 +4,13 @@ class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.json
   def index
-    @quotes = current_user.quotes.page(params[:page]).per(20)
+    @quotes = current_user.quotes.includes(:owner).page(params[:page]).per(20)
   end
 
   # GET /quotes/1
   # GET /quotes/1.json
   def show
-    @quote = current_user.quotes.find(params[:id])
+    @quote = current_user.quotes.includes(:owner).find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -53,7 +53,7 @@ class QuotesController < ApplicationController
   # PUT /quotes/1
   # PUT /quotes/1.json
   def update
-    @quote = current_user.quotes.find(params[:id])
+    @quote = current_user.quotes.includes(:owner).find(params[:id])
 
     respond_to do |format|
       if @quote.update_attributes(params[:quote])
@@ -69,7 +69,7 @@ class QuotesController < ApplicationController
   # DELETE /quotes/1
   # DELETE /quotes/1.json
   def destroy
-    @quote = current_user.quotes.find(params[:id])
+    @quote = current_user.quotes.includes(:owner).find(params[:id])
     @quote.destroy
 
     respond_to do |format|
