@@ -1,0 +1,2 @@
+$('#results').html("<%= escape_javascript(results.map { |q| quote_tile(q) }.join.html_safe) %>");
+$('#paginator').html('<%= escape_javascript(paginate(results, remote: true).to_s) %>');

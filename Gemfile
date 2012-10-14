@@ -20,6 +20,7 @@ gem 'pg_search'
 gem 'devise'
 gem "socialization"
 gem 'gravatar_image_tag'
+gem "kaminari"
 
 group :development, :test do
   gem "minitest-rails"
