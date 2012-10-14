@@ -1,4 +1,7 @@
 Quotebin::Application.routes.draw do
+  get "search", to: "search#search", as: "search"
+  get "search/autocomplete", to: "search#autocomplete", as: "search_autocomplete"
+
   get "social/follow_tag"
 
   get "social/follow_username"

@@ -1,0 +1,24 @@
+<header class="page__title">
+  <%= pluralize(results.count, 'Result') %> for "<%= query %>" 
+</header>
+<section class="page__main__tabs nav-bar nav-bar_main-tabs">
+  <ul class="nav">
+    <li class="nav__item">
+      <a class="nav__link" href="#">Relevancy</a>
+    </li>
+    <li class="nav__item">
+      <a class="nav__link b" href="#">Likes</a>
+    </li>
+    <li class="nav__item">
+      <a class="nav__link" href="#">Recency</a>
+    </li>
+  </ul>
+</section>
+
+<section class="page__main__body page__main__body_columns c">
+
+  <% results.limit(20).each do |quote| %>
+    <%= quote_tile quote %>
+  <% end %>
+
+</section>
