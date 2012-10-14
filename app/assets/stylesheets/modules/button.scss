@@ -205,6 +205,21 @@ Styleguide 1.0
 .button-bar_6 .button {padding: 0; width: 16.66%}
 
 
+// For rows of buttons that are not connected
+.button-row {
+  @extend .cf;
+  .button-wrapper {float: left; width: 50%; padding: 0 .4em; }
+  .button-wrapper:first-child {padding-left: 0;}
+  .button-wrapper:last-child {padding-right: 0;}
+  .button {display: block;}
+}
+
+.button-row_3 {.button-wrapper{ width: 33.333%;}}
+.button-row_4 {.button-wrapper{ width: 25%;}}
+.button-row_5 {.button-wrapper{ width: 20%;}}
+.button-row_6 {.button-wrapper{ width: 16.666666%;}}
+
+
 // Buttons with icons
 .button_icon {
   padding-left: 0;

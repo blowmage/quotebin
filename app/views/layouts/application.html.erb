@@ -13,7 +13,7 @@
 
   <aside class="page__sidebar">
     <header class="page__branding">
-      <a class="page__logo">Quote Bin</a>
+      <a  href="<%= root_path %>" class="page__logo">Quote Bin</a>
       <div class="page__branding__action js-page-branding-action">
         <a class="js-user-box-toggle button button_inline state_active" href="#">
           <i class="icon icon_user"></i>
@@ -39,7 +39,7 @@
         </div>
       </div>
       <div class="user-box__metadata button-bar button-bar_3">
-        <a class="button button_opaque_white button_label-hover" href="">
+        <a class="button button_opaque_white button_label-hover" href="<%= quotes_path %>">
           <i class="icon icon_quote_white icon_no-text"></i>
           <span class="button__title">My Quotes</span>
         </a>
@@ -53,23 +53,18 @@
         </a>
       </div>
     </section>
+    <% else -%>
+      <section class="user-box js-user-box">
+         <div class="user-box__metadata button-row">
+          <div class="button-wrapper">
+            <%= link_to "Sign Up", new_user_registration_path, class: "button" %>
+          </div>
+          <div class="button-wrapper">
+            <%= link_to "Sign In", new_user_session_path, class: "button" %>
+          </div>
+        </div>
+      </section>
     <% end -%>
-
-    <section class="list_trending-tags list">
-      <header class="list__header mbs">Navigation</header>
-        <ul class="list__body">
-          <li class="list__item"><%= link_to "home", root_path %></li>
-          <% if signed_in?(:user) -%>
-          <li class="list__item"><%= link_to "profile", profile_path %></li>
-          <li class="list__item"><%= link_to "quotes", quotes_path %></li>
-          <li class="list__item"></li>
-          <% else -%>
-          <li class="list__item"><%= link_to "signup", new_user_registration_path %></li>
-          <li class="list__item"><%= link_to "login",  new_user_session_path %></li>
-          <% end -%>
-        </ul>
-      </header>      
-    </section>
 
     <section class="list_trending-tags list">
       <header class="list__header mbs">Trending Tags</header>
