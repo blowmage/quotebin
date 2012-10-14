@@ -108,13 +108,11 @@
       </ul>
     </header>
 
-    <section class="page__main__body c">
-      <% flash.each do |type, msg| %>
-        <div class="<%= type %>"><%= msg %></div>
-      <% end %>
+    <% flash.each do |type, msg| %>
+      <div class="<%= type %>"><%= msg %></div>
+    <% end %>
 
-      <%= yield %>
-    </section>
+    <%= yield %>
   </div>
 
   <div class="quote-creator js-quote-creator">

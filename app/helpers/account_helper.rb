@@ -1,8 +1,4 @@
 module AccountHelper
-  def quote_tile quote
-    render partial: "quote_tile", locals: { quote: quote }
-  end
-
   def tag_list quote
     if quote.present? && quote.tags.present?
       quote.tag_list.map do |tag|
