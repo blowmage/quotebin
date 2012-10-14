@@ -5,10 +5,14 @@
   </div>
 </header>
 
-<section class="page__main__body page__main__body_columns c">
+<section class="page__main__body c">
 
-  <% tag_cloud(tags, %w(1.0em 1.2em 1.4em 1.6em)) do |tag, font_size| %>
-    <%= link_to tag.name, tag_path(tag.name), style: "font-size: #{font_size}" %>
-  <% end %>
+  <article class="quote-tile quote-tile_large">
+    <div class="quote-tile__body">
+    <% tag_cloud(tags, %w(1.0em 1.4em 2.0em 2.6em)) do |tag, font_size| %>
+      <span class="tag"><%= link_to tag.name, tag_path(tag.name), style: "font-size: #{font_size}" %></span>
+    <% end %>
+    </div>
+  </article>
 
 </section>
