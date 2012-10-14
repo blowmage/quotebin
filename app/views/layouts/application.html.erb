@@ -39,11 +39,11 @@
     <section class="user-box js-user-box">
       <div class="user-box__main">
         <figure class="figure figure_avatar figure_30 user-box__avatar">
-          <a href="#"><%= gravatar_image_tag(current_user.email, :alt => current_user.name, class: 'figure__image', gravatar: {size: 32}) %></a>
+          <a href="<%= profile_path %>"><%= gravatar_image_tag(current_user.email, :alt => current_user.name, class: 'figure__image', gravatar: {size: 32}) %></a>
         </figure>
         <div class="page__sidebar__user user-box__name">
           <%= link_to current_user.name, profile_path, class: "inverted user-box__name-link b" %>
-          <%= link_to "Sign Out", destroy_user_session_path, class: "inverted user-box__name-link opacity_5", method: :delete, 
+          <%= link_to "Sign Out", destroy_user_session_path, class: "inverted user-box__name-link opacity_5", method: :delete,
                                                                data:   { :confirm => "You sure?" } %>
         </div>
       </div>
