@@ -26,6 +26,8 @@ Styleguide 1.0
   color: #333;
   @extend .font_proxima;
   border: 0;
+  -webkit-appearance: none;
+  outline: 0;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
      -moz-user-select: none;
