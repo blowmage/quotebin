@@ -18,11 +18,11 @@
 
 .user-box__name {
   @extend .media__content;
-  font-weight: bold;
 }
 
 .user-box__name-link {
-  line-height: 30px;
+  display: block;
+  line-height: 15px;
 }
 
 @media screen and (max-width: 780px) {

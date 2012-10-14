@@ -33,7 +33,9 @@
           <a href="#"><%= gravatar_image_tag(current_user.email, :alt => current_user.name, class: 'figure__image', gravatar: {size: 32}) %></a>
         </figure>
         <div class="page__sidebar__user user-box__name">
-          <%= link_to current_user.name, profile_path, class: "inverted user-box__name-link" %>
+          <%= link_to current_user.name, profile_path, class: "inverted user-box__name-link b" %>
+          <%= link_to "Sign Out", destroy_user_session_path, class: "inverted user-box__name-link opacity_5", method: :delete, 
+                                                               data:   { :confirm => "You sure?" } %>
         </div>
       </div>
       <div class="user-box__metadata button-bar button-bar_3">
@@ -60,8 +62,7 @@
           <% if signed_in?(:user) -%>
           <li class="list__item"><%= link_to "profile", profile_path %></li>
           <li class="list__item"><%= link_to "quotes", quotes_path %></li>
-          <li class="list__item"><%= link_to "logout", destroy_user_session_path, method: :delete,
-                                                               data:   { :confirm => "You sure?" } %></li>
+          <li class="list__item"></li>
           <% else -%>
           <li class="list__item"><%= link_to "signup", new_user_registration_path %></li>
           <li class="list__item"><%= link_to "login",  new_user_session_path %></li>
