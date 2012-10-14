@@ -1,24 +1,39 @@
-<h2>Sign up</h2>
-
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :name %><br />
-  <%= f.text_field :name %></div>
-
-  <div><%= f.label :username %><br />
-  <%= f.text_field :username %></div>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+<div class="page__main__body">
+  <div class="box box_register">
+    <header class="box__header">
+      <h2 class="milli b heading">Sign up</h2>
+      <p class="opacity_5 mtm">All fields are required.</p>
+    </header>
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <section class="box__body">
+      <div class="field mbm">
+        <%= f.label :name, :class => "field__label hidden" %>
+        <%= f.text_field :name, :class => "field__input input_text", :placeholder => "Your name" %>
+      </div>
+      <div class="field mbm">
+        <%= f.label :username, :class => "field__label hidden" %>
+        <%= f.text_field :username, :class => "field__input input_text", :placeholder => "User name"  %>
+      </div>
+      <div class="field mbm">
+        <%= f.label :email, :class => "field__label hidden" %>
+        <%= f.email_field :email, :class => "field__input input_text", :placeholder => "Email Address"  %>
+      </div>
+      <div class="field mbm">
+        <%= f.label :password, :class => "field__label hidden" %>
+        <%= f.password_field :password, :class => "field__input input_text", :placeholder => "Password"  %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation, :class => "field__label hidden" %>
+        <%= f.password_field :password_confirmation, :class => "field__input input_text", :placeholder => "Confirm Password"  %>
+      </div>
+    </section>
+    <footer class="box__footer">
+      <%= f.submit "Sign Up", :class => "button button_primary fl" %>
+      <div class="fr box_register__footer__links">
+        <%= render "devise/shared/links" %>
+      </div>
+    </footer>
+  </div>
+  <% end %>
+</div>
