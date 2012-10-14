@@ -28,11 +28,12 @@ Styleguide 2.0
 .figure_180 {width: 180px;}
 .figure_full {width: 100%;}
 
-
-
-
 .figure_avatar {
   .figure__image {
     border-radius: 4px;
   }
+}
+
+.figure_inline {
+  margin-top: -2px;
 }

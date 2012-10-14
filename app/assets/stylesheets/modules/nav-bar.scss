@@ -41,3 +41,13 @@
   margin: 0 -.857em;
   padding: 0 .857em;
 }
+
+.nav-bar_main-tabs_profile {
+  height: auto;
+  line-height: auto;
+  .nav__item {
+    padding-top: 1.714em;
+    padding-bottom: 1.714em;
+    width: 33.333%;
+  }
+}

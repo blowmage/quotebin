@@ -9,7 +9,9 @@ Styleguide 1.0
 */
 
 .button {
-  font-size: 1em;
+  font-size: 1em !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
   height: 30px;
   padding: 0 1em;
   background: #eee;

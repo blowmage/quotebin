@@ -106,33 +106,13 @@
 }
 
 .quote-tile__contributor__metadata__item {
-  float: right;
-  display: block;
-  background: #fff;
   height: 80px;
   width: 80px;
-  text-align: center;
-  @extend .font_proxima;
-  font-weight: bold;
-  font-size: 0.85em;
-  @include border-radius(4px);
-  color: #333;
   margin-left: 24px;
-}
-
-.quote-tile__contributor__metadata__item__number{
-  padding-top: 20px;
-  display: block;
-  font-size: 2em;
-}
-
-.quote-tile__contributor__metadata__item__label {
-  display: block;
 }
 
 @media screen and (max-width: 1100px) {
   .quote-tile__contributor__metadata__item {margin-left: 0; height: 25px; line-height: 25px; margin-bottom: 1px; float: none; width: auto;}
-  .quote-tile__contributor__metadata__item__number, .quote-tile__contributor__metadata__item__label {display: inline; font-size: 1em;}
 }
 
 @media screen and (max-width: 950px) {

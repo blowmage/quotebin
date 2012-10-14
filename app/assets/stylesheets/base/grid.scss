@@ -41,6 +41,22 @@
   .g_mp6 {width:percentage(6/6);}
 }
 
+// tablet
+@media screen and (max-width: 1100px) {
+  .g_t1 {width:percentage(1/12);}
+  .g_t2 {width:percentage(2/12);}
+  .g_t3 {width:percentage(3/12);}
+  .g_t4 {width:percentage(4/12);}
+  .g_t5 {width:percentage(5/12);}
+  .g_t6 {width:percentage(6/12);}
+  .g_t7 {width:percentage(7/12);}
+  .g_t8 {width:percentage(8/12);}
+  .g_t9 {width:percentage(9/12);}
+  .g_t10 {width:percentage(10/12);}
+  .g_t11 {width:percentage(11/12);}
+  .g_tfull {width:percentage(12/12); padding: 0;}
+}
+
 // Desktop bigger
 @media screen and (min-width: 1510px) {
   .g_dl1 {width:percentage(1/12);}
