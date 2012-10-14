@@ -1,5 +1,5 @@
 <% if current_user.present? %>
-  <div class="button-bar button-bar_3">
+  <div class="button-bar button-bar_3 button-bar_fr">
     <% if current_user == quote.owner %>
       <%= link_to edit_quote_path(quote), class: "button" do %>
         <i class="icon icon_edit icon_no-text"></i>
@@ -16,7 +16,7 @@
     <% end %>
   </div>
 <% else %>
-  <div class="button-bar">
+  <div class="button-bar button-bar_fr">
     <%= link_to tweet_quote_url(quote),
                 data: { popup: true }, class: "button" do %>
       <i class="icon icon_share icon_no-text"></i>

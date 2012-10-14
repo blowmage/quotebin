@@ -202,6 +202,10 @@ Styleguide 1.0
   }
 }
 
+.button-bar_fr {
+  .button {float: right;}
+}
+
 .button-bar_3 .button {padding: 0; width: 33.333%;}
 .button-bar_4 .button {padding: 0; width: 25%;}
 .button-bar_5 .button {padding: 0; width: 20%}
