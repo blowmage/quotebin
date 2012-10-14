@@ -15,8 +15,8 @@ class SearchController < ApplicationController
       payload = results.limit(8).map do |q|
         { value: query, label: "<em>\"#{truncate(q.quotation, length: 60)}\"</em> by <strong>#{q.author}</strong>".html_safe, url: account_quote_path(q.owner.username, q.id) }
       end
-      payload << { value: query, label: "<strong>Search for</strong> <em>\"#{query}\"</em> (#{results.total_count} results)".html_safe, url: search_path(q: query) }
-      payload << { value: query, label: "<strong>Create a quote</strong> for <em>\"#{query}\"</em>".html_safe, url: new_quote_path }
+      payload << { value: query, label: "<strong class='b'>Search:</strong> <em class='em'>\"#{query}\"</em> (#{results.total_count} results)".html_safe, url: search_path(q: query) }
+      payload << { value: query, label: "<strong class='b'>Add quote:</strong> <em class='em'>\"#{query}\"</em>".html_safe, url: new_quote_path }
     end
 
     render json: payload
