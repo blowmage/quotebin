@@ -10,7 +10,7 @@ class SearchController < ApplicationController
 
   def autocomplete
     terms = Quote.search(params[:term]).select("substring(quotation from 0 for 80) AS term").limit(10)
-    render json: terms.map { |q| { label: query, term: q.term, author: q.author, url: account_quote_path(q.owner.username, q.id) } }
+    render json: terms.map { |q| { value: query, term: q.term, author: q.author, url: account_quote_path(q.owner.username, q.id) } }
   end
 
   protected
