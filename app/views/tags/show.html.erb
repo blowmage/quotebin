@@ -1,7 +1,7 @@
 <header class="page__title media">
   <div class="fl">
     <i class="icon icon_tag"></i>
-    <span><%= tag_name %></span>
+    <span><%= tag_name %> (<%= pluralize(quotes.count, 'Quote') %>)</span>
   </div>
   <div class="fr">
     <%= button_to "Follow", follow_tag_path(tag_name),
@@ -25,7 +25,7 @@
 
 <section class="page__main__body page__main__body_columns c">
 
-  <% quotes.limit(10).each do |quote| %>
+  <% quotes.limit(20).each do |quote| %>
     <%= quote_tile quote %>
   <% end %>
 

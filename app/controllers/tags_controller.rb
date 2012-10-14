@@ -23,7 +23,7 @@ class TagsController < ApplicationController
   end
 
   def quotes
-    @quotes ||= Quote.tagged_with(tag_name).limit(10)
+    @quotes ||= Quote.tagged_with(tag_name)
   end
 
   def require_tag!
