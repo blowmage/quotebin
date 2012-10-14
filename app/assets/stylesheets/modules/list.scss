@@ -84,6 +84,20 @@ Styleguide 3.0
   }
 }
 
+.ui-menu-item {
+  .ui-corner-all {
+    display: block;
+    background: #32a371;
+    border-bottom: 1px solid #b7f9dc;
+    font-size: 1.28em;
+    color: #fff;
+    padding: 10px 0 11px 24px;
+    &:hover {background: #44c18a;}
+    &:last-child {border-bottom: 0;}
+    &:hover, &.ui-state-hover {background: #44c18a;}
+  }
+}
+
 @media screen and (max-width: 780px) {
   .list_trending-tags{display: none;}
 }
