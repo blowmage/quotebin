@@ -271,3 +271,20 @@ Styleguide 1.0
   &:hover{ color: #fff; background: #57cf9a;}
   &:active{background: #299566;}
 }
+
+.button_white {
+  background: #fff;
+  &:hover { background: #eee; }
+  &:active { background: #ddd; }
+}
+
+
+@-webkit-keyframes pulse {
+  0% {background-color: rgba(255,255,255,1);}
+  50% {background-color: rgba(255,255,255,.8);}
+  100% {background-color: rgba(255,255,255,1);}
+}
+
+.button_sign-up {
+  -webkit-animation: pulse 4s infinite;
+}
