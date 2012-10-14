@@ -1,6 +1,6 @@
 require "bundler/capistrano"
 
-set :whenever_command, "bundle exec whenever"
+set :whenever_command, "PATH=/usr/local/bin:$PATH bundle exec whenever"
 require "whenever/capistrano"
 
 server "173.255.209.206", :web, :app, :db, primary: true
