@@ -24,15 +24,8 @@
     <header class="page__branding">
       <a  href="<%= root_path %>" class="page__logo icon icon__logo"></a>
 
-      <% if signed_in?(:user) -%>
-        <div class="fr mlm">
-          <%= link_to 'Add Quote', new_quote_path, class: "button button_inline button_opaque_black hidden m_show_inline-block" %>
-        </div>
-      <% else -%>
-      <% end -%>
-
       <div class="page__branding__action js-page-branding-action">
-        <a class="js-user-box-toggle button button_opaque_white button_inline state_active" href="#">
+        <a class="js-user-box-toggle button button_opaque_black button_inline state_active" href="#">
           <i class="icon icon_user"></i>
           <span class="dropdown__arrow">&#x25BC;</span>
         </a>
@@ -42,8 +35,6 @@
         </a>
       </div>
     </header>
-    <a href="#" class="inverted js-add-quote">create</a>
-
 
     <% if signed_in?(:user) -%>
     <section class="user-box js-user-box">
@@ -58,21 +49,19 @@
         </div>
       </div>
       <div class="user-box__metadata button-bar button-bar_3">
-        <a class="button button_opaque_white button_label-hover" href="<%= quotes_path %>">
+        <a class="button button_opaque_black button_label-hover" href="<%= quotes_path %>">
           <i class="icon icon_quote_white icon_no-text"></i>
           <span class="button__title">My Quotes</span>
         </a>
-        <a class="button button_opaque_white button_label-hover" href="">
+        <a class="button button_opaque_black button_label-hover" href="">
           <i class="icon icon_like_white icon_no-text"></i>
           <span class="button__title">My Likes</span>
         </a>
-        <a class="button button_opaque_white button_label-hover" href="">
+        <a class="button button_opaque_black button_label-hover" href="">
           <i class="icon icon_tag_white icon_no-text"></i>
           <span class="button__title">My Tags</span>
         </a>
       </div>
-
-      <%= link_to 'Add Quote', new_quote_path, class: "button mtm hidden" %>
     </section>
     <% else -%>
       <section class="user-box js-user-box">
