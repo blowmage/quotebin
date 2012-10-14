@@ -20,29 +20,17 @@
   </ul>
 </section>
 <section class="page__main__body page__main__body_columns c">
-    <% @quotes.each do |quote| %>
-        <article class="quote-tile quote-tile_edit">
-          <div class="quote-tile__body">
-            <div class="quote-tile__actions">
-              <div class="button-bar button-bar_3">
-                <a class="button" href="<%= edit_quote_path(quote) %>"><i class="icon icon_edit icon_no-text"></i></a>
-                <a class="button" href=""><i class="icon icon_share icon_no-text"></i></a>
-                <a class="button" href=""><i class="icon icon_like icon_no-text"></i></a>
-              </div>
-            </div>
-            <header class="quote-tile__header">
-              <span>In</span>
-              <%= show_tag_list(quote) %>
-            </header>
-            <a href="<%= quote.url %>" class="quote-tile__title">
-                <%= markdown(quote.quotation) %>
-            </a>
-            <footer class="quote-tile__footer">
-              <a href="<%= quote.author %>" class="quote-tile__author"><%= quote.author %></a>
-              <a href="<%= quote.source %>" class="quote-tile__source"><%= quote.source %></a>
-            </footer>
-          </div>
-        </article>
-    <% end %>
 
+  <div id="quotes">
+    <% @quotes.each do |quote| %>
+      <%= quote_tile quote %>
+    <% end %>
+  </div>
+
+</section>
+
+<section class="page__main__body c">
+  <div id="paginator">
+    <%= paginate @quotes, remote: true %>
+  </div>
 </section>

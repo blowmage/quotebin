@@ -4,12 +4,7 @@ class QuotesController < ApplicationController
   # GET /quotes
   # GET /quotes.json
   def index
-    @quotes = current_user.quotes.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @quotes }
-    end
+    @quotes = current_user.quotes.page(params[:page]).per(20)
   end
 
   # GET /quotes/1
