@@ -70,6 +70,12 @@
 .icon_big-heart {display: block; height: 60px; width: 60px; background-position: -98px -60px;}
 .icon_big-tag {display: block; height: 60px; width: 60px; background-position: -98px -120px;}
 
+.icon__logo {
+  width: 130px;
+  height: 20px;
+  display: inline-block;
+  background-position: 0 -194px;
+}
 
 .state_active {
   .icon_cover {@extend .icon_cover_black;}
