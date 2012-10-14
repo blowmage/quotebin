@@ -5,8 +5,8 @@
       <p class="opacity_5 mtm">All fields are required.</p>
     </header>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-    <%= devise_error_messages! %>
     <section class="box__body">
+      <%= devise_error_messages! %>
       <div class="field mbm">
         <%= f.label :name, :class => "field__label hidden" %>
         <%= f.text_field :name, :class => "field__input input_text", :placeholder => "Your name" %>
