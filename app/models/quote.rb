@@ -10,6 +10,8 @@ class Quote < ActiveRecord::Base
   acts_as_taggable
   acts_as_likeable
 
+  validates :owner_id, presence: true
+
   def likes_count
     self.likers(User).count
   end

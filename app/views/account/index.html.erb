@@ -19,13 +19,13 @@
   </li>
   <li class="nav__item">
     <a class="nav__link b box box_stat" href="#">
-      <span class="box__header">10</span>
+      <span class="box__header"><%= quote.owner.followers(User).count %></span>
       <span class="box__footer">Followers</span>
     </a>
   </li>
   <li class="nav__item">
     <a class="nav__link b box box_stat" href="#">
-      <span class="box__header">10</span>
+      <span class="box__header"><%= quote.owner.followees(User).count %></span>
       <span class="box__footer">Following</span>
     </a>
   </li>
