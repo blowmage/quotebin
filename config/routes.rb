@@ -7,9 +7,8 @@ Quotebin::Application.routes.draw do
 
   root to: "home#index"
   # Tags
-  get "tags/show"
   get 'tags', to: "tags#index", as: 'tags'
-  get 'tag/:tag', to: 'tags#show', as: 'tag'
+  get 'tags/:tag', to: 'tags#show', as: 'tag'
   get ':username/tags', to: "account#tags", as: 'user_tags'
   get ':username/tags/:tag', to: "account#tag", as: 'user_tag'
   # Quotes
@@ -41,7 +40,7 @@ Quotebin::Application.routes.draw do
   get  ":username" => "account#index", as: :account
   get  ":username/quote/:id" => "account#quote", as: :account_quote
   # Follow
-  # post "tags/:tag/follow" => "social#follow_tag", as: :follow_tag
+  post "tags/:tag/follow" => "social#follow_tag", as: :follow_tag
   post ":username/follow" => "social#follow_username", as: :follow_username
   # Like
   post ":username/quote/:id/like" => "social#like_username_quote", as: :like_username_quote

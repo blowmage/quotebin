@@ -1,5 +1,14 @@
-<h1>Tags</h1>
+<header class="page__title media">
+  <div class="fl">
+    <i class="icon icon_tag"></i>
+    <span>All Tags</span>
+  </div>
+</header>
 
-<% for tag in @tags do %>
-  <%= link_to tag, tag_path(tag.name) %>
-<% end %>
+<section class="page__main__body page__main__body_columns c">
+
+  <% tag_cloud(tags, %w(1.0em 1.2em 1.4em 1.6em)) do |tag, font_size| %>
+    <%= link_to tag.name, tag_path(tag.name), style: "font-size: #{font_size}" %>
+  <% end %>
+
+</section>
