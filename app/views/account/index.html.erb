@@ -1,9 +1,9 @@
 <header class="page__title media">
 <div class="fl">
-  <figure class="figure figure_avatar figure_30 figure_inline mrm">
-    <a href="#"><img class="figure__image" src="assets/images/avatar.png"></a>
+  <figure class="figure figure_avatar figure_30 user-box__avatar">
+    <a href="<%= profile_path %>"><%= gravatar_image_tag(@account.email, :alt => @account.name, class: 'figure__image', gravatar: {size: 32}) %></a>
   </figure>
-  <span>Jayden Anderson</span>
+  <span><%= @account.name %></span>
 </div>
 <div class="fr">
   <a class="button button_primary button_inline" href="#">Follow</a>
