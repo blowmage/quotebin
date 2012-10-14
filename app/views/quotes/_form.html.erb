@@ -1,36 +1,50 @@
-<%= form_for(@quote) do |f| %>
-  <% if @quote.errors.any? %>
-    <div class="alert" id="error_explanation">
-      <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
-      <ul>
-      <% @quote.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<div class="page__main__body">
+    <div class="c">
+  <%= form_for(@quote) do |f| %>
+    <% if @quote.errors.any? %>
+      <div class="g g_full">
+        <div class="alert" id="error_explanation">
+          <h2><%= pluralize(@quote.errors.count, "error") %> prohibited this quote from being saved:</h2>
+          <ul>
+          <% @quote.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+      <div class="g_full g">
+        <div class="field">
+          <%= f.text_field :tag_list, :class => "field__input input_text", :placeholder => "Tag your quote (optional / separate with commas)" %>
+        </div>
+      </div>
+      <div class="g_full g g_t12">
+        <div class="field">
+          <%= f.text_area :quotation, :class => "field__input input_textarea input_textarea_height_200", :placeholder => "Enter your quotation" %>
+        </div>
+      </div>
+
+      <div class="g_1of3 g g_t12">
+        <div class="field">
+          <%= f.text_field :author, :class => "field__input input_text", :placeholder => "Quote Author (optional)" %>
+        </div>
+      </div>
+
+      <div class="g_1of3 g g_t12">
+        <div class="field">
+          <%= f.text_field :source, :class => "field__input input_text", :placeholder => "Quotation source name (optional)" %>
+        </div>
+      </div>
+
+      <div class="g_1of3 g g_t12">
+        <div class="field">
+          <%= f.text_field :url, :class => "field__input input_text", :placeholder => "Quotation source URL (optional)" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions g g_full">
+      <%= f.submit 'Add Quote', :class => "button button_primary" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :quotation %><br />
-    <%= f.text_area :quotation %>
-  </div>
-  <div class="field">
-    <%= f.label :author %><br />
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :tag_list, "Tags (separated by commas)" %><br />
-    <%= f.text_field :tag_list %>
-  </div>
-  <div class="field">
-    <%= f.label :source %><br />
-    <%= f.text_field :source %>
-  </div>
-  <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
