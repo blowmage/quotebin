@@ -41,7 +41,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       if @quote.save
-        format.html { redirect_to @quote, notice: 'Quote was successfully created.' }
+        format.html { redirect_to account_quote_path(username: current_user.username, id: @quote.id), notice: 'Quote was successfully created.' }
         format.json { render json: @quote, status: :created, location: @quote }
       else
         format.html { render action: "new" }
