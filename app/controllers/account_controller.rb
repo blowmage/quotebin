@@ -32,7 +32,11 @@ class AccountController < ApplicationController
   end
 
   def quote
-    @quote ||= account.quotes.includes(:owner).find(params[:id])
+    if params[:id]
+      @quote ||= account.quotes.includes(:owner).find(params[:id])
+    else
+      @quote ||= account.quotes.includes(:owner).sample
+    end
   end
 
   def require_account!

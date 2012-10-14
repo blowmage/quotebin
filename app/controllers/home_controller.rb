@@ -5,6 +5,11 @@ class HomeController < ApplicationController
   def index
   end
 
+  def recent
+    @quotes = Quote.includes(:owner).order("quotes.created_at DESC").page(params[:page]).per(20)
+    render :index
+  end
+
   def profile
     redirect_to account_path(current_user.username)
   end
@@ -12,6 +17,6 @@ class HomeController < ApplicationController
   protected
 
   def quotes
-    @quotes ||= Quote.includes(:owner).order("RANDOM()").page(params[:page]).per(20)
+    @quotes ||= Quote.includes(:owner).order("quotes.popularity DESC, quotes.id ASC").page(params[:page]).per(20)
   end
 end

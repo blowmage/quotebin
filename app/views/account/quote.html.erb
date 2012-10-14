@@ -4,10 +4,12 @@
       <div class="quote-tile__actions">
         <%= quote_button_bar quote %>
       </div>
+      <% if quote.tags.count > 0 %>
       <header class="quote-tile__header">
         <span>On</span>
         <%= tag_list quote %>
       </header>
+      <% end %>
       <a href="" class="quote-tile__title js-character-count">
         <%= markdown(quote.quotation) -%>
       </a>

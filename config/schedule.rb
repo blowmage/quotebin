@@ -19,6 +19,7 @@
 
 # Learn more: http://github.com/javan/whenever
 
+env :PATH, "$PATH:/usr/local/bin:$PATH"
 set :output, "#{path}/log/cron.log"
 
 every 5.minutes, roles: [:app] do
