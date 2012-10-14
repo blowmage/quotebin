@@ -9,6 +9,8 @@ Quotebin::Application.routes.draw do
   get "social/follow_username_quote"
 
   root to: "home#index"
+  get "recent", to: "home#recent", as: "recent"
+
   # Tags
   get 'tags', to: "tags#index", as: 'tags'
   get 'tags/:tag', to: 'tags#show', as: 'tag'

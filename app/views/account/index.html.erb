@@ -6,7 +6,9 @@
   <span><%= @account.name %></span>
 </div>
 <div class="fr">
-  <a class="button button_primary button_inline" href="#">Follow</a>
+  <%= button_to "Follow", follow_username_path(account.username),
+                method: :post, remote: true,
+                class: "button button_primary button_inline" %>
 </div>
 </header>
 <section class="page__main__tabs nav-bar nav-bar_main-tabs nav-bar_main-tabs_profile">
@@ -19,13 +21,13 @@
   </li>
   <li class="nav__item">
     <a class="nav__link b box box_stat" href="#">
-      <span class="box__header"><%= quote.owner.followers(User).count %></span>
+      <span class="box__header"><%= account.followers(User).count %></span>
       <span class="box__footer">Followers</span>
     </a>
   </li>
   <li class="nav__item">
     <a class="nav__link b box box_stat" href="#">
-      <span class="box__header"><%= quote.owner.followees(User).count %></span>
+      <span class="box__header"><%= account.followees(User).count %></span>
       <span class="box__footer">Following</span>
     </a>
   </li>

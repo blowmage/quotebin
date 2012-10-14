@@ -3,17 +3,21 @@
     <%= link_to edit_quote_path(quote), class: "button" do %>
       <i class="icon icon_edit icon_no-text"></i>
     <% end %>
+    <%= link_to tweet_quote_url(quote),
+                data: { popup: true }, class: "button" do %>
+      <i class="icon icon_share icon_no-text"></i>
+    <% end %>
+    <%= link_to like_username_quote_path(quote.owner.username, quote.id),
+                data: { social_like: true },
+                method: :post, remote: true, class: "button" do %>
+      <i class="icon icon_like icon_no-text"></i>
+    <% end %>
+  </div>
 <% else %>
   <div class="button-bar">
+    <%= link_to tweet_quote_url(quote),
+                data: { popup: true }, class: "button" do %>
+      <i class="icon icon_share icon_no-text"></i>
+    <% end %>
+  </div>
 <% end %>
-
-  <%= link_to tweet_quote_url(quote),
-              data: { popup: true }, class: "button" do %>
-    <i class="icon icon_share icon_no-text"></i>
-  <% end %>
-  <%= link_to like_username_quote_path(quote.owner.username, quote.id),
-              data: { social_like: true },
-              method: :post, remote: true, class: "button" do %>
-    <i class="icon icon_like icon_no-text"></i>
-  <% end %>
-</div>
