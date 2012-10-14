@@ -1,2 +1,28 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+Probably not important, but from New Relic Install:
+===================================================
+
+Developer Mode is now a Rack middleware.
+
+Developer Mode is no longer available in Rails 2.1 and earlier.
+However, starting in version 2.12 you can use Developer Mode in any
+Rack based framework, in addition to Rails.  To install developer mode
+in a non-Rails application, just add NewRelic::Rack::DeveloperMode to
+your middleware stack.
+
+If you are using JRuby, we recommend using at least version 1.4 or
+later because of issues with the implementation of the timeout library.
+
+Refer to the README.md file for more information.
+
+Please see http://github.com/newrelic/rpm/blob/master/CHANGELOG
+for a complete description of the features and enhancements available
+in version 3.5 of the Ruby Agent.
+
+Regarding the Recommendation
+============================
+
+* there is no decomposition
+* there is no optimized libraries loaded (LAPACK, Atlas, or even using any C)
+* there is no larger-than-memory matrix management
+* there IS some sparse matrix management (using hashes instead of full matrices, cutting computation and memory down by about 99%)
+* there IS a bit of caching (QuoteCorpus)
