@@ -4,12 +4,14 @@
   margin: 12px 24px;
 }
 
-.pagination span {
+.pagination .pagination__item {
+  margin: 0 6px;
   @extend .button;
   @extend .button_inline;
   @extend .button_square;
-  margin: 0 6px;
-  a {display: block;}
+  a {
+    display: block;
+  }
 }
 
 .pagination {
@@ -23,6 +25,7 @@
   }
   .next, .prev {
     a {
+      display: inline-block;
       overflow: hidden;
       @extend .icon;
       @extend .icon_no-text;

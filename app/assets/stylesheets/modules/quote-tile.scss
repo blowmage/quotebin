@@ -41,6 +41,8 @@
   color: #333;
   font-size: 1.42em;
   line-height: 1.4em;
+  p:first-child {&:before { content: open-quote; }}
+  p:last-child {&:after { content: close-quote; }}
 }
 
 .quote-tile__footer {
