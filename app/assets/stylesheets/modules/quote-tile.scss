@@ -5,9 +5,6 @@
 
 @media screen and (max-width: 1400px) {
   .quote-tile__bullet {display: none;}
-  .quote-tile__footer {line-height: 1.5em;}
-  .quote-tile__author {display: block; margin-bottom: 6px;}
-  .quote-tile__source {display: block;}
 }
 
 @media screen and (max-width: 720px) {
@@ -54,15 +51,18 @@
   font-size: 0.85em;
   letter-spacing: 2px;
   @extend .font_proxima;
-  line-height: 1em;
+  line-height: 1.5em;
 }
 
 .quote-tile__author {
+  display: block;
+  margin-bottom: 6px;
   font-weight: bold;
   color: #333;
 }
 
 .quote-tile__source {
+  display: block;
   color: #aaa;
 }
 
