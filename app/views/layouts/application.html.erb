@@ -24,10 +24,13 @@
     <header class="page__branding">
       <a  href="<%= root_path %>" class="page__logo icon icon__logo"></a>
 
-      <div class="fr mlm hidden">
-        <%= link_to 'Add Quote', new_quote_path, class: "button button_inline button_opaque_black" %>
-      </div>
-      
+      <% if signed_in?(:user) -%>
+        <div class="fr mlm">
+          <%= link_to 'Add Quote', new_quote_path, class: "button button_inline button_opaque_black hidden m_show_inline-block" %>
+        </div>
+      <% else -%>
+      <% end -%>
+
       <div class="page__branding__action js-page-branding-action">
         <a class="js-user-box-toggle button button_opaque_white button_inline state_active" href="#">
           <i class="icon icon_user"></i>

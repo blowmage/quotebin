@@ -134,5 +134,7 @@
 
 @media screen and (max-width: 720px) {
   .m_show { display: block; }
+  .m_show_inline { display: inline; }
+  .m_show_inline-block { display: inline-block !important; }
   .m_hide { display: none; }
 }
