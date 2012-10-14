@@ -13,7 +13,7 @@
         <%= tag_list quote %>
       </header>
       <a href="" class="quote-tile__title">
-        <%= quote.quotation %>
+        <%= truncate(quote.quotation, :length => 400)-%>
       </a>
       <footer class="quote-tile__footer">
         <a href="#" class="quote-tile__author"><%= quote.author %></a>
