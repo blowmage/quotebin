@@ -2,6 +2,10 @@ class SearchController < ApplicationController
   helper_method :query, :results
 
   def search
+    if results.count == 1
+      quote = results.first
+      redirect_to account_quote_path(quote.owner.username, quote.id)
+    end
   end
 
   def autocomplete
