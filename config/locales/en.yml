@@ -2,4 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  errors:
+    messages:
+      too_long: "is too long (max is %{count} char.)"
+      too_short: "is too short (min is %{count} char.)"
+      wrong_length: "is the wrong length (should be %{count} chars)"
