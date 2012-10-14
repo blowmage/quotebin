@@ -11,7 +11,7 @@
       <%= tag_list quote %>
     </header>
     <a href="<%= account_quote_path(quote.owner.username, quote) %>" class="quote-tile__title">
-      <%= truncate(quote.quotation, :length => 400)-%>
+      <%= markdown(truncate(quote.quotation, :length => 400))-%>
     </a>
     <footer class="quote-tile__footer">
       <a href="#" class="quote-tile__author"><%= quote.author %></a>
