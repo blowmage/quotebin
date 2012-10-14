@@ -88,6 +88,9 @@ GEM
       thor (~> 0.14)
     jruby-pageant (1.1.1)
     json (1.7.5)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     kgio (2.7.4)
     m (1.2.1)
       method_source (>= 0.6.7)
@@ -191,6 +194,7 @@ DEPENDENCIES
   devise
   gravatar_image_tag
   jquery-rails
+  kaminari
   m
   minitest-rails
   minitest-rg

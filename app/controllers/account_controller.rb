@@ -1,6 +1,6 @@
 class AccountController < ApplicationController
   before_filter :require_account!
-  helper_method :account, :quote
+  helper_method :account, :quotes, :quote
 
   def index; end
   def show_quote; end
@@ -25,6 +25,10 @@ class AccountController < ApplicationController
 
   def account
     @account ||= User.find_by_username params[:username]
+  end
+
+  def quotes
+    @quotes ||= account.quotes.page(params[:page]).per(20)
   end
 
   def quote

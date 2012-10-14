@@ -20,6 +20,6 @@ class SearchController < ApplicationController
   end
 
   def results
-    @results ||= Quote.search(query)
+    @results ||= Quote.search(query).page(params[:page]).per(20)
   end
 end

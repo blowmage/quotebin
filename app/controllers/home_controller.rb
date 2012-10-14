@@ -12,6 +12,6 @@ class HomeController < ApplicationController
   protected
 
   def quotes
-    @quotes ||= Quote.order("RANDOM()").limit(20)
+    @quotes ||= Quote.order("RANDOM()").page(params[:page]).per(20)
   end
 end

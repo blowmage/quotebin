@@ -11,7 +11,7 @@ class TagsController < ApplicationController
   protected
 
   def tags
-    Quote.tag_counts_on(:tags).limit(25)
+    Quote.tag_counts_on(:tags).limit(50)
   end
 
   def tag_name
@@ -23,7 +23,7 @@ class TagsController < ApplicationController
   end
 
   def quotes
-    @quotes ||= Quote.tagged_with(tag_name)
+    @quotes ||= Quote.tagged_with(tag_name).page(params[:page]).per(20)
   end
 
   def require_tag!

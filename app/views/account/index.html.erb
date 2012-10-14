@@ -1,5 +1,5 @@
 <header class="page__title">
-  My Quotes
+  My Quotes (<%= quotes.total_count %> total)
 </header>
 <section class="page__main__tabs nav-bar nav-bar_main-tabs">
   <ul class="nav">
@@ -14,8 +14,16 @@
 
 <section class="page__main__body page__main__body_columns c">
 
-  <% account.quotes.limit(10).each do |quote| %>
-    <%= quote_tile quote %>
-  <% end %>
+  <div id="quotes">
+    <% quotes.each do |quote| %>
+      <%= quote_tile quote %>
+    <% end %>
+  </div>
 
+</section>
+
+<section class="page__main__body c">
+  <div id="paginator">
+    <%= paginate quotes, remote: true %>
+  </div>
 </section>
