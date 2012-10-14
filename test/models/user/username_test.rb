@@ -56,13 +56,13 @@ describe User, :username do
   it "must be 3 characters or larger" do
     @mike.username = "a"
     refute @mike.valid?
-    assert @mike.errors[:username].include?("is too short (minimum is 3 characters)")
+    assert @mike.errors[:username].include?("is too short (min is 3 char.)")
   end
 
   it "must be 32 characters or smaller" do
     @mike.username = "abcdefghijklmnopqrstuvwxyz0123456789"
     refute @mike.valid?
-    assert @mike.errors[:username].include?("is too long (maximum is 32 characters)")
+    assert @mike.errors[:username].include?("is too long (max is 32 char.)")
   end
 
 end
