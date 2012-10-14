@@ -12,8 +12,8 @@
         <span>In</span>
         <%= tag_list quote %>
       </header>
-      <a href="" class="quote-tile__title">
-        <%= truncate(quote.quotation, :length => 400)-%>
+      <a href="" class="quote-tile__title js-character-count">
+        <%= quote.quotation -%>
       </a>
       <footer class="quote-tile__footer">
         <a href="#" class="quote-tile__author"><%= quote.author %></a>
