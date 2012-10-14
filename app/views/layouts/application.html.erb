@@ -13,9 +13,9 @@
 
 
   <% flash.each do |type, msg| %>
-    <div class="alert alert_sticky-top alert__<%= type %>">
+    <div class="alert alert_sticky-top js-alert alert__<%= type %>">
       <p class="alert__message"><%= msg %></p>
-      <a class="button button_close"><i class="icon icon_close_white"></i></a>
+      <a class="button button_close js-alert-close"><i class="icon icon_close_white"></i></a>
     </div>
   <% end %>
 
@@ -155,9 +155,14 @@
       $(".js-add-quote, .js-cancel-quote").click(function() {
         $(".js-quote-creator").toggleClass("state_active");
       });
-      $(".alert_sticky-top").addClass("state_active").delay(5000).queue(function() {
+      $(".alert_sticky-top").addClass("state_active").delay(15000).queue(function() {
+        $(this).addClass("state_falling");
         $(this).removeClass("state_active");
         $(this).dequeue();
+      });
+      $(".js-alert-close").click(function() {
+        $(".js-alert").addClass("state_falling");
+        $(".js-alert").removeClass("state_active");
       });
     });
   </script>

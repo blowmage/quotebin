@@ -173,25 +173,36 @@ Styleguide 11.3
 
 .alert_sticky-top {
   z-index: 10000;
-  position: absolute;
-  top: 0;
-  width: 100%;
+  position: fixed;
+  top: -100px;
+  right: 0;
+  width: 280px;
+  margin: 20px;
   border-width: 0 0 1px 0;
   text-align: center;
   @include opacity(0);
   border-radius: 0;
-  @include transition(all .4s linear);
+  @include transition(all .6s linear);
+  @include border-radius(4px);
   .alert__message {margin: 0 40px;}
   .button_close {
-    top: 50%;
-    right: 9px;
-    margin-top: -14px;
+    top: -12px;
+    right: -12px;
   }
 }
 
 .alert_sticky-top.state_active {
   @include opacity(1);
   top: 0;
+  @include transition(opacity .6s linear);
+  -webkit-animation: fall-in .6s 1;
+}
+
+
+.alert_sticky-top.state_falling {
+  top: 100%;
+  @include opacity(0);
+  -webkit-animation: fall-out .6s 1;
 }
 
 .alert_sticky-top__wrapper {
@@ -200,4 +211,17 @@ Styleguide 11.3
   top: 0;
   left: 0;
   width: 100%;
+}
+
+
+
+@-webkit-keyframes fall-in {
+  0% {-webkit-transform: rotate3d(0,0,0, 30deg) translate(0,-100px); }
+  50% {-webkit-transform: rotate3d(0,0,0, -5deg) translate(0,5px);  }
+  100% {-webkit-transform: rotate3d(0,0,0, 0deg) translate(0,0);  }
+}
+
+@-webkit-keyframes fall-out {
+  0% {-webkit-transform: rotate3d(0,0,0, 0deg);}
+  100% {-webkit-transform: rotate3d(0,0,0, -20deg);}
 }
