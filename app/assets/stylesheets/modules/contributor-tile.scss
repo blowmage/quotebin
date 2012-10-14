@@ -1,0 +1,32 @@
+.contributor-tile {
+  padding: .857em;
+  @include column-break-inside(avoid);
+}
+
+@media screen and (max-width: 1400px) {
+  .contributor-tile__bullet {display: none;}
+  .contributor-tile__footer {line-height: 1.5em;}
+  .contributor-tile__author {display: block; margin-bottom: 6px;}
+  .contributor-tile__source {display: block;}
+}
+
+@media screen and (max-width: 720px) {
+  .contributor-tile{
+    padding: 0;
+    margin: 1px -.857em;
+    @include border-radius(0);}
+}
+
+
+.contributor-tile__body{
+  position: relative;
+  @extend .cf;
+  background: #fff;
+  @include border-radius(4px);
+  padding: 1.714em;
+  color: #aaa;
+}
+
+.contributor-tile__name {
+  font-weight: bold;
+}

@@ -1,0 +1,41 @@
+.box {
+  @include border-radius(4px);
+  background: #fff;
+}
+
+.box_stat {
+  display: block;
+  text-align: center;
+  @extend .font_proxima;
+  font-weight: bold;
+  font-size: 0.85em;
+  color: #333;
+  letter-spacing: 0 !important;
+  .box__header {
+    padding-top: 20px;
+    display: block;
+    font-size: 2em;
+    line-height: 1em;
+  }
+  .box__footer {
+    padding: 12px 0;
+    line-height: 1em;
+    font-weight: normal;
+    display: block;
+  }
+  &.state_active {
+    color: #fff;
+    background: #32a371;
+  }
+}
+
+
+
+@media screen and (max-width: 1100px) {
+  .box_stat_collpase {margin-left: 0; height: 26px; line-height: 26px; margin-bottom: 1px; float: none; width: auto;}
+  .box_stat_collpase{ .box__header, .box__footer {display: inline; font-size: 1em;} }
+}
+
+@media screen and (max-width: 950px) {
+  .quote-tile__contributor__info {margin-bottom: 12px;}
+}

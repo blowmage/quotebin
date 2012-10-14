@@ -39,29 +39,39 @@
         </div>
       </section>
       <section class="quote-tile__contributor__metadata">
-        <a href="#" class="quote-tile__contributor__metadata__item">
-          <span class="quote-tile__contributor__metadata__item__number">
-            <%= quote.owner.followees(User).count %>
-          </span>
-          <span class="quote-tile__contributor__metadata__item__label">
-            Followers
-          </span>
-        </a>
-        <a href="#" class="quote-tile__contributor__metadata__item">
-          <span class="quote-tile__contributor__metadata__item__number">
-            <%= quote.owner.followers(User).count %>
-          </span>
-          <span class="quote-tile__contributor__metadata__item__label">
-            Following
-          </span>
-        </a>
-        <a href="#" class="quote-tile__contributor__metadata__item">
-          <span class="quote-tile__contributor__metadata__item__number">
-            <%= quote.owner.quotes.count %>
-          </span>
-          <span class="quote-tile__contributor__metadata__item__label">
-            Quotes
-          </span>
+        
+            <div class="c c_nested">
+              <div class="g g_1of3 g_tfull">
+                <a href="#" class="box box_stat box_stat_collpase">
+                  <span class="box__header">
+                    12
+                  </span>
+                  <span class="box__footer">
+                    <%= quote.owner.followers(User).count %>
+                  </span>
+                </a>
+              </div>
+              <div class="g g_1of3 g_tfull">
+                <a href="#" class="box box_stat box_stat_collpase">
+                  <span class="box__header">
+                    <%= quote.owner.followees(User).count %>
+                  </span>
+                  <span class="box__footer">
+                    Following
+                  </span>
+                </a>
+              </div>
+              <div class="g g_1of3 g_tfull">
+                <a href="#" class="box box_stat box_stat_collpase">
+                  <span class="box__header">
+                    <%= quote.owner.quotes.count %>
+                  </span>
+                  <span class="box__footer">
+                    Quotes
+                  </span>
+                </a>
+              </div>
+            </div>
         </a>
       </section>
 
