@@ -44,10 +44,10 @@
               <div class="g g_1of3 g_tfull">
                 <a href="#" class="box box_stat box_stat_collpase">
                   <span class="box__header">
-                    12
+                    <%= quote.owner.followers(User).count %>
                   </span>
                   <span class="box__footer">
-                    <%= quote.owner.followers(User).count %>
+                    Followers
                   </span>
                 </a>
               </div>
