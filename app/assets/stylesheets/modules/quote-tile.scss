@@ -17,6 +17,7 @@
   @include border-radius(4px);
   padding: 1.714em;
   color: #aaa;
+  @include hyphens(auto);
 }
 
 .quote-tile__header {
