@@ -41,6 +41,22 @@
   .g_mp6 {width:percentage(6/6);}
 }
 
+// tablet portrait
+@media screen and (max-width: 950px) {
+  .g_tp1 {width:percentage(1/12);}
+  .g_tp2 {width:percentage(2/12);}
+  .g_tp3 {width:percentage(3/12);}
+  .g_tp4 {width:percentage(4/12);}
+  .g_tp5 {width:percentage(5/12);}
+  .g_tp6 {width:percentage(6/12);}
+  .g_tp7 {width:percentage(7/12);}
+  .g_tp8 {width:percentage(8/12);}
+  .g_tp9 {width:percentage(9/12);}
+  .g_tp10 {width:percentage(10/12);}
+  .g_tp11 {width:percentage(11/12);}
+  .g_tpfull {width:percentage(12/12); padding-left: 0; padding-right: 0; padding-bottom: 12px;}
+}
+
 // tablet
 @media screen and (max-width: 1100px) {
   .g_t1 {width:percentage(1/12);}

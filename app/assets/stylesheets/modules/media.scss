@@ -124,3 +124,33 @@ Styleguide 6.0
     }
   }
 }
+
+.media_onboarding {
+  padding: 12px;
+  background: #083722;
+  font-style: italic;
+  font-size: 1.2em;
+  color: #4ac38e;
+  @include border-radius(4px);
+  text-align: center;
+  .media__content {
+    padding: 15px 0;
+  }
+}
+
+@media screen and (max-width: 1360px) {
+  .media_onboarding {
+    .media__block {margin: 6px 0;}
+  }
+}
+@media screen and (max-width: 1032px) {
+  .media_onboarding {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 960px) {
+  .media_onboarding {
+    font-size: 1em;
+    .media__block {margin: 0;}
+  }
+}
