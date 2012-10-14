@@ -11,6 +11,14 @@
 </head>
 <body class="page">
 
+
+  <% flash.each do |type, msg| %>
+    <div class="alert alert_sticky-top alert__<%= type %>">
+      <p class="alert__message"><%= msg %></p>
+      <a class="button button_close"><i class="icon icon_x"></i></a>
+    </div>
+  <% end %>
+
   <aside class="page__sidebar">
     <header class="page__branding">
       <a  href="<%= root_path %>" class="page__logo">Quote Bin</a>
@@ -93,10 +101,6 @@
         <% end %>
     </header>
 
-    <% flash.each do |type, msg| %>
-      <div class="<%= type %>"><%= msg %></div>
-    <% end %>
-
     <%= yield %>
   </div>
 
@@ -150,6 +154,10 @@
       });
       $(".js-add-quote, .js-cancel-quote").click(function() {
         $(".js-quote-creator").toggleClass("state_active");
+      });
+      $(".alert_sticky-top").addClass("state_active").delay(5000).queue(function() {
+        $(this).removeClass("state_active");
+        $(this).dequeue();
       });
     });
   </script>
