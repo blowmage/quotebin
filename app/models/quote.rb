@@ -1,8 +1,17 @@
 class Quote < ActiveRecord::Base
+  include PgSearch
+
   belongs_to :owner, class_name: "User"
 
   acts_as_taggable
   acts_as_likeable
 
   attr_accessible :quotation, :author, :source, :url, :tag_list
+
+  # Tried it with "unaccent" extension, but couldn't figure out the indexes
+  pg_search_scope :search,
+    against: {quotation: 'A', author: 'B'},
+    associated_against: { tags: [:name]},
+    using: {tsearch: {dictionary: 'english'}}
+
 end
