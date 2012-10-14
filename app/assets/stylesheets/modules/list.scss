@@ -93,9 +93,9 @@ Styleguide 3.0
     color: #fff;
     padding: 10px 0 11px 24px;
     &:hover {background: #44c18a;}
-    &:last-child {border-bottom: 0;}
     &:hover, &.ui-state-hover {background: #44c18a;}
   }
+  &:last-child {.ui-corner-all {border-bottom: 0;}}
 }
 
 @media screen and (max-width: 780px) {
