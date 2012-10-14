@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :quotes, foreign_key: :owner_id
   has_many :taggings, class_name: "ActsAsTaggableOn::Tagging"
   has_many :tags, through: :taggings, class_name: "ActsAsTaggableOn::Tag"
+  has_many :streams
 
   acts_as_followable
   acts_as_follower

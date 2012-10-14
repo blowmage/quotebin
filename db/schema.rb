@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121014000517) do
+ActiveRecord::Schema.define(:version => 20121014082315) do
+
+  create_table "clicks", :force => true do |t|
+    t.string   "action"
+    t.string   "controller"
+    t.text     "params"
+    t.integer  "stream_id"
+    t.string   "path_info"
+    t.string   "request_path"
+    t.string   "request_uri"
+    t.string   "http_user_agent"
+    t.string   "http_referer"
+    t.string   "remote_address"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "follows", :force => true do |t|
     t.string   "follower_type"
@@ -54,6 +69,14 @@ ActiveRecord::Schema.define(:version => 20121014000517) do
     t.string   "url"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "streams", :force => true do |t|
+    t.string   "session_id"
+    t.integer  "user_id"
+    t.integer  "child_stream_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "taggings", :force => true do |t|
