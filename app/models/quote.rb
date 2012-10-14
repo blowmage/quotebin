@@ -30,7 +30,12 @@ class Quote < ActiveRecord::Base
   end
 
   def self.update_popularity
-    Quote.find_each { |q| q.popularity = q.likes_count; q.save }
+    Quote.find_each &:update_popularity!
+  end
+
+  def update_popularity!
+    self.popularity = self.likes_count
+    self.save
   end
 
 end
