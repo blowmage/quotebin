@@ -6,5 +6,4 @@ jQuery ->
   $('#q').autocomplete
     appendToType: $('#q-autocomplete'),
     source: $('#q').data('autocomplete-source'),
-    select: (event, ui) ->
-         $(this).val(ui.item.value).parents("form").submit();
+    select: (event, ui) -> window.location.href = ui.item.url
