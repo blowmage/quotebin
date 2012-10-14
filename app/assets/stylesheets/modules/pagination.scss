@@ -1,0 +1,13 @@
+.pagination {
+  text-align: center;
+  display: block;
+  background: #fff;
+  padding: 12px;
+  @include border-radius(4px);
+  margin: 12px;
+}
+
+.pagination a {
+  @extend .button;
+  @extend .button_inline;
+}
