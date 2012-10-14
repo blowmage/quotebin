@@ -52,6 +52,16 @@
   //   content: "";
   //   @include background-image(linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%));
   // }
+  ul {
+    margin-left: 3em;
+    li {list-style: disc;}
+  }
+  ol {
+    margin-left: 3em;
+    li {list-style: decimal;}
+  }
+  em {font-style: italic;}
+  strong {font-weight: bold;}
   p:first-child {&:before { content: open-quote; }}
   p:last-child {&:after { content: close-quote; }}
 }
