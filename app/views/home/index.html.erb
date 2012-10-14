@@ -8,13 +8,11 @@
     </li>
   </ul>
 </section>
-
+<% if signed_in?(:user) -%>
+<% else -%>
 <section class="page__main__body">
   <div class="g g_full">
     <article class="box">
-      <a class="button button_close">
-        <i class="icon icon_close_white"></i>
-      </a>
       <header class="box__header">
         <h1 class="font_proxima normal b">Welcome to Quote Bin</h1>
         <h3 class="font_proxima micro opacity_5 b mtm">You've come to the easiest place to find and document quotes.</h3>
@@ -56,6 +54,7 @@
     </article>
   </section>
 </section>
+<% end -%>
 
 <section class="page__main__body page__main__body_columns c">
 

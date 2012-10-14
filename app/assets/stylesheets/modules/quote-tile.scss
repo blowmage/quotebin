@@ -26,14 +26,14 @@
   letter-spacing: 2px;
   line-height: 1em;
   @extend .cf;
-  padding-right: 72px;
+  padding-right: 102px;
 }
 
 .quote-tile__actions {
   position: absolute;
   top: 12px;
   right: 12px;
-  width: 60px;
+  width: 90px;
 }
 
 .quote-tile__title {
@@ -43,15 +43,6 @@
   color: #333;
   font-size: 1.42em;
   line-height: 1.4em;
-  // &:after {
-  //   position: absolute;
-  //   bottom: 0;
-  //   left: 0;
-  //   right: 0;
-  //   height: 60px;
-  //   content: "";
-  //   @include background-image(linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%));
-  // }
   ul {
     margin-left: 3em;
     li {list-style: disc;}
