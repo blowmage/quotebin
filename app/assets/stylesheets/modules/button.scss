@@ -111,11 +111,11 @@ Styleguide 1.0
   height: 30px;
   width: 30px;
   border: 2px solid #fff !important;
-  background: #fff !important;
+  background: #333 !important;
   line-height: 30px;
   padding: 0;
   @extend .button_circle;
-  .icon {margin: 5px auto; display: block;}
+  .icon {margin: 3px; display: block;}
   &:hover{opacity: .8;}
 }
 

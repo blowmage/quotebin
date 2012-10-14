@@ -6,7 +6,7 @@
   .box__body{padding:24px;@extend .cf;}
   .box__footer{
     padding:24px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #ddd;
     @extend .cf;
   }
 
@@ -26,6 +26,7 @@
     line-height: 1em;
   }
   .box__footer {
+    border-top: none;
     padding: 12px 0;
     line-height: 1em;
     font-weight: normal;

@@ -97,13 +97,6 @@ ActiveRecord::Schema.define(:version => 20121014082315) do
     t.string "name"
   end
 
-  create_table "terms", :force => true do |t|
-    t.string   "name"
-    t.integer  "quote_ids"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "username"

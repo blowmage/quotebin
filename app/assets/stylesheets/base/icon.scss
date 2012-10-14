@@ -55,6 +55,9 @@
 .icon_edit { background-position: 0 -100px; }
 .icon_edit_white { background-position: -20px -100px; }
 
+.icon_close { background-position: 0 -120px; }
+.icon_close_white { background-position: -20px -120px; }
+
 
 .state_active {
   .icon_cover {@extend .icon_cover_black;}
