@@ -6,7 +6,9 @@
     </header>
   <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
     <section class="box__body">
-      <%= devise_error_messages! %>
+      <div class="text_small">
+        <%= devise_error_messages! %>
+      </div>
       <div class="field mbm">
         <%= f.label :name, :class => "field__label hidden" %>
         <%= f.text_field :name, :class => "field__input input_text", :placeholder => "Your name" %>

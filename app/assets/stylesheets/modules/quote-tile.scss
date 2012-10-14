@@ -3,10 +3,6 @@
   @include column-break-inside(avoid);
 }
 
-@media screen and (max-width: 1400px) {
-  .quote-tile__bullet {display: none;}
-}
-
 @media screen and (max-width: 720px) {
   .quote-tile{
     padding: 0;
@@ -56,7 +52,6 @@
 
 .quote-tile__author {
   display: block;
-  margin-bottom: 6px;
   font-weight: bold;
   color: #333;
 }
