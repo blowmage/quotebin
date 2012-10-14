@@ -33,4 +33,14 @@ class User < ActiveRecord::Base
   def self.find_by_username nick
     where("username ILIKE ?", nick).first
   end
+
+  # TODO: Refine this list to get the most useful quotes
+  def quote_bag
+    QuoteBag.new quotes
+  end
+
+  # TODO: Refine this list to get the most useful tags
+  def tag_recommendations(n=3)
+    quote_bag.tag_recommendations(Quote.all, n)
+  end
 end

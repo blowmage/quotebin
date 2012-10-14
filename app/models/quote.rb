@@ -1,4 +1,8 @@
+require 'quote_recommendation_toolkit'
+
 class Quote < ActiveRecord::Base
+  include QuoteRecommendationToolkit
+
   include PgSearch
 
   belongs_to :owner, class_name: "User"
@@ -13,5 +17,10 @@ class Quote < ActiveRecord::Base
     against: { quotation: 'A', author: 'B', source: 'B' },
     associated_against: { tags: [:name] },
     using: { tsearch: { prefix: true } }
+
+
+  def text_source
+    "#{quotation} #{author} #{source} #{url}"
+  end
 
 end

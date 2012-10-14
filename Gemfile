@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'acts-as-taggable-on'
 gem 'redcarpet'
 gem 'rails', '3.2.8'
+gem 'stemmer'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -22,4 +23,13 @@ gem 'gravatar_image_tag'
 
 group :development, :test do
   gem "minitest-rails"
+  gem "autotest"
+  gem 'minitest-rg'
+  gem 'm'
+  gem "autotest"
+  gem 'autotest-standalone'
+  gem 'autotest-fsevent'
+  gem 'autotest-growl'
 end
+
+gem 'debugger'
