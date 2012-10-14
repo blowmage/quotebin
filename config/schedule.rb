@@ -19,8 +19,8 @@
 
 # Learn more: http://github.com/javan/whenever
 
+set :output, "#{path}/log/cron.log"
+
 every 5.minutes, roles: [:app] do
   runner "Quote.update_popularity"
 end
-
-set :output, File.join(path, 'log', 'cron.log')
