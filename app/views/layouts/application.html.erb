@@ -114,40 +114,44 @@
     <%= yield %>
   </div>
 
-  <div class="quote-creator js-quote-creator">
-    <div class="quote-creator__wrapper">
-      <section class="quote-creator__tags">
-        <div class="input_text quote-creator__input">
-          <input class="quote-creator__input_tag" type="text" placeholder="Tag your quote (optional)">
-        </div>
-      </section>
-      <section class="quote-creator__quote">
-        <textarea class="input_textarea quote-creator__input quote-creator__input_quote" type="text" placeholder="Enter your quote"></textarea>
-        <section class="quote-creator__markdown-tip">
-          <header class="quote-creator__markdown-tip__header">You can use <a href="http://daringfireball.net/projects/markdown/syntax" class="b">Markdown</a> to format your quote.</header>
-          <div class="quote-creator__markdown-tip__body list mbn">
-            <header class="list__header b">We support:</header>
-            <ul class="list__body">
-              <li class="list__item"><span class="b">Lists</span> (1. numbered) (- bulleted)</li>
-              <li class="list__item"><span class="b">Emphasis</span> (*bold*) (**italic**)</li>
-              <li class="list__item"><a href="http://daringfireball.net/projects/markdown/syntax" class="b">How to use Markdown &raquo;</a></li>
-            </ul>
+  <!-- Because I have 45 minutes to finish... -->
+  <%- @new_quote = Quote.new %>
+  <%= form_for @new_quote do |f| %>
+    <div class="quote-creator js-quote-creator">
+      <div class="quote-creator__wrapper">
+        <section class="quote-creator__tags">
+          <div class="input_text quote-creator__input">
+            <%= f.text_field :tag_list, class: "quote-creator__input_tag", placeholder: "Tag your quote (optional)" %>
           </div>
         </section>
-      </section>
-      <section class="quote-creator__meta">
-        <section class="quote-creator__author">
-          <input class="input_text quote-creator__input" type="text" placeholder="Enter quote author (optional)">
+        <section class="quote-creator__quote">
+          <%= f.text_area :quotation, class: "input_textarea quote-creator__input quote-creator__input_quote", placeholder:  "Enter your quote" %>
+          <section class="quote-creator__markdown-tip">
+            <header class="quote-creator__markdown-tip__header">You can use <a href="http://daringfireball.net/projects/markdown/syntax" class="b">Markdown</a> to format your quote.</header>
+            <div class="quote-creator__markdown-tip__body list mbn">
+              <header class="list__header b">We support:</header>
+              <ul class="list__body">
+                <li class="list__item"><span class="b">Lists</span> (1. numbered) (- bulleted)</li>
+                <li class="list__item"><span class="b">Emphasis</span> (*bold*) (**italic**)</li>
+                <li class="list__item"><a href="http://daringfireball.net/projects/markdown/syntax" class="b">How to use Markdown &raquo;</a></li>
+              </ul>
+            </div>
+          </section>
         </section>
-        <section class="quote-creator__source">
-          <input class="input_text quote-creator__input" type="text" placeholder="Enter quote source (optional)">
+        <section class="quote-creator__meta">
+          <section class="quote-creator__author">
+            <%= f.text_field :author, class: "input_text quote-creator__input", placeholder: "Enter quote author (optional)" %>
+          </section>
+          <section class="quote-creator__source">
+            <%= f.text_field :source, class: "input_text quote-creator__input", placeholder: "Enter quote source (optional)" %>
+          </section>
         </section>
-      </section>
-      <footer class="quote-creator__actions">
-        <button class="button button_size_medium fl js-cancel-quote">Cancel</button>
-        <button class="button button_primary button_size_medium fr">Add Quote</button>
-      </footer>
-    </div>
+        <footer class="quote-creator__actions">
+          <button class="button button_size_medium fl js-cancel-quote">Cancel</button>
+          <%= f.submit "Add Quote", class: "button button_primary button_size_medium fr" %>
+        </footer>
+      </div>
+    <% end %>
   </div>
 
   <script type="text/javascript">
@@ -161,9 +165,6 @@
       $(".js-user-box-toggle").click(function() {
         $(".js-user-box").toggleClass("state_active");
         $(".js-page-branding-action").find(".button").toggleClass("state_active");
-      });
-      $(".js-add-quote, .js-cancel-quote").click(function() {
-        $(".js-quote-creator").toggleClass("state_active");
       });
       $(".alert_sticky-top").addClass("state_active").delay(15000).queue(function() {
         $(this).addClass("state_falling");
