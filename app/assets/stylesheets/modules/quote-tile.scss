@@ -17,7 +17,6 @@
   @include border-radius(4px);
   padding: 1.714em;
   color: #aaa;
-  @include hyphens(auto);
 }
 
 .quote-tile__header {
@@ -43,6 +42,7 @@
   color: #333;
   font-size: 1.42em;
   line-height: 1.4em;
+  @include hyphens(auto);
   ul {
     margin-left: 3em;
     li {list-style: disc;}
@@ -88,6 +88,7 @@
 .quote-tile__contributor__info{
   float: left;
   width: 50%;
+  margin: .857em 0;
 }
 
 .quote-tile__contributor__name{
