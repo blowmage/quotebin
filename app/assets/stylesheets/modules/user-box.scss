@@ -8,7 +8,7 @@
 
 .user-box__main {
   @extend .cf;
-  margin-bottom: 6px;
+  @extend .mbm;
 }
 
 .user-box__avatar {
