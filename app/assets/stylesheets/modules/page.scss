@@ -87,6 +87,10 @@
   position: relative;
 }
 
+.page__search_logged-out .ui-autocomplete .ui-menu-item:last-child {
+  display: none;
+}
+
 .page__main__pagination {
   left: 240px;
   right: 0;

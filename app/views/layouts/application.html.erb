@@ -98,6 +98,7 @@
   </aside>
 
   <div class="page__main">
+    <% if signed_in?(:user) -%>
     <header class="page__search page__main__header">
       <%= form_tag("/search", :method => "get") do %>
         <%= text_field_tag(:q, "", placeholder: "Search Or Add Quotes",
@@ -105,6 +106,15 @@
                                    class: "input_text_main-search input_text js-main-search") %>
         <% end %>
     </header>
+    <% else -%>
+    <header class="page__search page__search_logged-out page__main__header">
+      <%= form_tag("/search", :method => "get") do %>
+        <%= text_field_tag(:q, "", placeholder: "Search Quotes",
+                                   data: { autocomplete_source: search_autocomplete_path },
+                                   class: "input_text_main-search input_text js-main-search") %>
+        <% end %>
+    </header>
+    <% end -%>
 
     <%= yield %>
   </div>
