@@ -3,12 +3,12 @@
     <div class="quote-tile__actions">
       <%= quote_button_bar quote %>
     </div>
-    <% if quote.tags.count > 0 %>
     <header class="quote-tile__header">
-      <span>On</span>
-      <%= tag_list quote %>
+      <% if quote.tags.count > 0 %>
+        <span>On</span>
+        <%= tag_list quote %>
+      <% end %>
     </header>
-    <% end %>
     <a href="<%= account_quote_path(quote.owner.username, quote) %>" class="quote-tile__title">
       <%= markdown(truncate(quote.quotation, :length => 400))-%>
     </a>
