@@ -223,6 +223,18 @@ Styleguide 1.0
   }
 }
 
+.button_quote-like {
+  &.state_active {
+    color: #fff;
+    background: #e14f4f !important;
+    &:hover {background: #eb7878 !important; color: #fff;}
+    &:active {background: #c23333 !important;}
+    .icon {
+      @extend .icon_like_white;
+    }
+  }
+}
+
 
 
 
