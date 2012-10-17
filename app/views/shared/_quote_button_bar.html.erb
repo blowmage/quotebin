@@ -1,23 +1,23 @@
 <% if current_user.present? %>
   <div class="button-bar fr">
     <% if current_user == quote.owner %>
-      <%= link_to edit_quote_path(quote), class: "button button_square button_quote-edit" do %>
+      <%= link_to edit_quote_path(quote), class: "button button_square button_quote-tile button_quote-tile-edit" do %>
         <i class="icon icon_edit icon_no-text"></i>
       <% end %>
     <% end %>
     <%= link_to tweet_quote_url(quote),
-                data: { popup: true }, class: "button button_square button_quote-share" do %>
+                data: { popup: true }, class: "button button_square button_quote-tile button_quote-tile-share" do %>
       <i class="icon icon_share icon_no-text"></i>
     <% end %>
     <%= link_to like_username_quote_path(quote.owner.username, quote.id),
                 data: { social_like: true },
-                method: :post, remote: true, class: "button button_square button_quote-like" do %>
+                method: :post, remote: true, class: "button button_square button_quote-tile button_quote-tile-like" do %>
       <i class="icon icon_like icon_no-text"></i>
     <% end %>
   </div>
 <% else %>
   <%= link_to tweet_quote_url(quote),
-              data: { popup: true }, class: "button button_square fr button_quote-share" do %>
+              data: { popup: true }, class: "button button_square button_quote-tile fr button_quote-tile-share" do %>
     <i class="icon icon_share icon_no-text"></i>
   <% end %>
 <% end %>
