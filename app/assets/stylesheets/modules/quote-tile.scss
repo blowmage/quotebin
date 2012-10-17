@@ -128,13 +128,28 @@
 }
 
 @media screen and (max-width: 1100px) {
-  .quote-tile__contributor__metadata__item {margin-left: 0; height: 25px; line-height: 25px; margin-bottom: 1px; float: none; width: auto;}
+  .quote-tile__contributor__metadata { margin: .857em 0; }
+  .quote-tile__contributor__metadata__item {
+    margin-left: 0; 
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 1px;
+    float: none;
+    width: auto;
+  }
 }
 
 @media screen and (max-width: 950px) {
   .quote-tile__contributor__info {margin-bottom: 12px;}
   .quote-tile__contributor__info, .quote-tile__contributor__metadata {
     float: none; width: auto;
+  }
+}
+
+@media screen and (min-width: 600px) and (max-width: 780px) {
+  .quote-tile__contributor__info, .quote-tile__contributor__metadata {
+    float: left;
+    width: 50%;
   }
 }
 
@@ -157,9 +172,9 @@
   }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 940px) {
   .quote-tile_large {
-    padding: 1.714em;
+    padding: 2.142em 1.714em 1.714em 1.714em;
     .quote-tile__title {
       font-size: 1.42em;
     }
