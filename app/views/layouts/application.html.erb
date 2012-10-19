@@ -82,16 +82,9 @@
     <section class="list_trending-tags list">
       <header class="list__header mbs">Trending Tags</header>
         <ul class="list__body">
-          <li class="list__item"><a href="#">Ridiculus</a></li>
-          <li class="list__item"><a href="#">Ipsum Mollis</a></li>
-          <li class="list__item"><a href="#">Bibendum Purus</a></li>
-          <li class="list__item"><a href="#">Risus Ridiculus</a></li>
-          <li class="list__item"><a href="#">Venenatis Sem</a></li>
-          <li class="list__item"><a href="#">Pellentesque Tellus</a></li>
-          <li class="list__item"><a href="#">Vulputate</a></li>
-          <li class="list__item"><a href="#">Parturient</a></li>
-          <li class="list__item"><a href="#">Dapibus</a></li>
-          <li class="list__item"><a href="#">Inceptos</a></li>
+          <% Quote.tag_counts_on(:tags).limit(10).each do |tag| %>
+            <li class="list__item"><%= link_to tag.name.titleize, tag_path(tag.name) %></li>
+          <% end %>
         </ul>
       </header>
     </section>
