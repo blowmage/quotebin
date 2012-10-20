@@ -82,7 +82,7 @@
     <section class="list_trending-tags list">
       <header class="list__header mbs">Trending Tags</header>
         <ul class="list__body">
-          <% Quote.tag_counts_on(:tags).limit(10).each do |tag| %>
+          <% Quote.tag_counts_on(:tags).order("count desc").limit(10).each do |tag| %>
             <li class="list__item"><%= link_to tag.name.titleize, tag_path(tag.name) %></li>
           <% end %>
         </ul>
