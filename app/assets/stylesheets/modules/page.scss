@@ -223,6 +223,9 @@
     display: block;
   }
   .page__branding {position: absolute; padding: 0 .857em;}
+  .page__title {
+    padding-left: 10px;
+  }
 }
 
 @media screen and (max-width: 720px) {
