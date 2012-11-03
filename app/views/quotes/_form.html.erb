@@ -43,8 +43,16 @@
       </div>
     </div>
 
-    <div class="actions g g_full">
-      <%= f.submit 'Save', :class => "button button_primary fr" %>
-    </div>
+    <ul class="actions g g_full nav">
+      <li class="nav__item pln">
+        <a href="javascript:history.go(-1);" class="font_proxima b">Cancel</a>
+      </li>
+      <li class="nav__item">
+      <%= link_to 'Delete Quote', @quote, method: :delete, data: { confirm: 'Are you sure?' }, :class => "font_proxima b" %>
+      </li>
+      <li class="nav__item fr prn">
+        <%= f.submit 'Save Quote', :class => "button button_primary fr" %>
+      </li>
+    </ul>
   <% end %>
 </div>
