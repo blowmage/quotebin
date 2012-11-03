@@ -20,23 +20,42 @@
     </div>
   <% end %>
 
+
+  <header class="page__header">
+
+
+    <aside class="page__sidebar">
+      <header class="page__branding">
+        <a  href="<%= root_path %>" class="page__logo icon icon__logo"></a>
+      </header>
+    </aside>
+    <div class="page__main">
+      <header class="page__main__header">
+        <a class="page__user-button js-user-box-toggle" href="#">
+          <i class="icon icon_user_white"></i>
+        </a>
+        <% if signed_in?(:user) -%>
+          <div class="page__search">
+          <%= form_tag("/search", :method => "get") do %>
+            <%= text_field_tag(:q, "", placeholder: "Search Or Add Quotes",
+                                       data: { autocomplete_source: search_autocomplete_path },
+                                       class: "input_text_main-search input_text js-main-search") %>
+            <% end %>
+          </div>
+        <% else -%>
+          <div class="page__search page__search_logged-out">
+            <%= form_tag("/search", :method => "get") do %>
+            <%= text_field_tag(:q, "", placeholder: "Search Quotes",
+                                       data: { autocomplete_source: search_autocomplete_path },
+                                       class: "input_text_main-search input_text js-main-search") %>
+          </div>
+        <% end %>
+      </header>
+      <% end -%>
+    </div>
+  </header>
+
   <aside class="page__sidebar">
-    <header class="page__branding">
-      <a  href="<%= root_path %>" class="page__logo icon icon__logo"></a>
-
-      <div class="page__branding__action js-page-branding-action">
-        <a class="js-user-box-toggle button button_opaque_white button_inline state_active" href="#">
-          <i class="icon icon_user"></i>
-          <span class="dropdown__arrow">&#x25BC;</span>
-        </a>
-        <a class="js-user-box-toggle button button_inline" href="#">
-          <i class="icon icon_user"></i>
-          <span class="dropdown__arrow">&#x25B2;</span>
-        </a>
-      </div>
-    </header>
-
-
     <% if signed_in?(:user) -%>
     <section class="user-box js-user-box">
       <div class="user-box__main">
@@ -78,38 +97,24 @@
         </div>
       </section>
     <% end -%>
-
-    <section class="list_trending-tags list">
-      <header class="list__header mbs">Trending Tags</header>
-        <ul class="list__body">
-          <% Quote.tag_counts_on(:tags).order("count desc").limit(10).each do |tag| %>
-            <li class="list__item"><%= link_to tag.name.titleize, tag_path(tag.name) %></li>
-          <% end %>
-        </ul>
-      </header>
-    </section>
+    
+    <div class="page__sidebar__content">
+      <section class="list_trending-tags list">
+        <header class="list__header mbs">Trending Tags</header>
+          <ul class="list__body">
+            <% Quote.tag_counts_on(:tags).order("count desc").limit(10).each do |tag| %>
+              <li class="list__item"><%= link_to tag.name.titleize, tag_path(tag.name) %></li>
+            <% end %>
+          </ul>
+        </header>
+      </section>
+    </div>
   </aside>
 
   <div class="page__main">
-    <% if signed_in?(:user) -%>
-    <header class="page__search page__main__header">
-      <%= form_tag("/search", :method => "get") do %>
-        <%= text_field_tag(:q, "", placeholder: "Search Or Add Quotes",
-                                   data: { autocomplete_source: search_autocomplete_path },
-                                   class: "input_text_main-search input_text js-main-search") %>
-        <% end %>
-    </header>
-    <% else -%>
-    <header class="page__search page__search_logged-out page__main__header">
-      <%= form_tag("/search", :method => "get") do %>
-        <%= text_field_tag(:q, "", placeholder: "Search Quotes",
-                                   data: { autocomplete_source: search_autocomplete_path },
-                                   class: "input_text_main-search input_text js-main-search") %>
-        <% end %>
-    </header>
-    <% end -%>
-
-    <%= yield %>
+    <div class="page__content">
+      <%= yield %>
+    </div>
   </div>
 
   <!-- Because I have 45 minutes to finish... -->
@@ -155,14 +160,13 @@
   <script type="text/javascript">
     $(document).ready(function(){
       $(".js-main-search").focus(function() {
-        $(this).parent().find(".js-list-main-search").fadeIn("fast");
+        $(this).closest('.page__search').addClass("state_active");
       });
       $(".js-main-search").blur(function() {
-        $(this).parent().find(".js-list-main-search").fadeOut("fast");
+        $(this).closest('.page__search').removeClass("state_active");
       });
       $(".js-user-box-toggle").click(function() {
-        $(".js-user-box").toggleClass("state_active");
-        $(".js-page-branding-action").find(".button").toggleClass("state_active");
+        $(".js-user-box, .js-user-box-toggle").toggleClass("state_active");
       });
       $(".alert_sticky-top").addClass("state_active").delay(15000).queue(function() {
         $(this).addClass("state_falling");

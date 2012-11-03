@@ -116,6 +116,12 @@ Styleguide 13.0
   @include border-radius(0);
 }
 
+@media screen and (max-width: 780px) {
+  .input_text_main-search {
+    padding-left: .857em;
+  }
+}
+
 .field {
   @extend .cf;
   position: relative;

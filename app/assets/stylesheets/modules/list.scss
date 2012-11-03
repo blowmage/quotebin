@@ -53,7 +53,6 @@ Styleguide 3.0
 
 
 .list_trending-tags {
-  margin-top: 1.714em;
   .list__header { @extend .font_proxima;letter-spacing: 2px; @extend .uppercase; font-weight: bold;}
   .list__item {
     line-height: 30px;
@@ -90,7 +89,7 @@ Styleguide 3.0
     border-bottom: 1px solid #b7f9dc;
     font-size: 1.28em;
     color: #fff;
-    padding: 10px 0 11px 24px;
+    padding: 10px 24px 11px 24px;
     &:hover {background: #44c18a;}
     &:hover, &.ui-state-hover {background: #44c18a;}
   }
@@ -98,5 +97,8 @@ Styleguide 3.0
 }
 
 @media screen and (max-width: 780px) {
+  .page__search{
+    .ui-menu-item { font-size: .8em; .ui-corner-all {padding: 12px;}}
+  }
   .list_trending-tags{display: none;}
 }

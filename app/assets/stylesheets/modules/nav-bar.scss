@@ -52,3 +52,14 @@
     width: 33.333%;
   }
 }
+
+@media screen and (max-width: 780px) {
+  .nav-bar_main-tabs {
+    text-align: center;
+    .nav .nav__item {float: none; display: inline-block;}
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .nav-bar_main-tabs {margin: 0;padding: 0;}
+}

@@ -6,7 +6,7 @@
 @media screen and (max-width: 720px) {
   .quote-tile{
     padding: 0;
-    margin: 1px -.857em;
+    margin: 1px 0;
     @include border-radius(0);}
 }
 
