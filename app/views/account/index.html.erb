@@ -3,12 +3,12 @@
   <figure class="figure figure_50 figure_profile-avatar">
     <a href="<%= profile_path %>"><%= gravatar_image_tag(@account.email, :alt => @account.name, class: 'figure__image', gravatar: {size: 50}) %></a>
   </figure>
-  <span><%= @account.name %></span>
+  <span class="page__title__name"><%= @account.name %></span>
 </div>
 <div class="fr">
   <%= button_to "Follow", follow_username_path(account.username),
                 method: :post, remote: true,
-                class: "button button_primary button_inline" %>
+                class: "button button_primary button_inline man" %>
 </div>
 </header>
 <section class="page__main__tabs nav-bar nav-bar_main-tabs nav-bar_main-tabs_profile">

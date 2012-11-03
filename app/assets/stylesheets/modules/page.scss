@@ -84,14 +84,16 @@
   height: 50px;
   position: relative;
   line-height: 50px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
   background: #fff;
   z-index: 0;
-  padding: 0 0.857em 0 1.714em;
+  padding: 0 10px 0 1.714em;
   @extend .font_proxima;
   border-bottom: 1px dashed #ddd;
   margin: 0 -0.857em;
+  overflow: hidden;
+  .page__title__name {
+    font-size: 1.28em;
+  }
 }
 
 .page__wrapper{
