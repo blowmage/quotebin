@@ -20,15 +20,17 @@
   color: #fff;
   text-align: center;
   line-height: 50px;
+  border-bottom: 1px solid #1f8c5c;
   .icon {margin: 0;}
   &:after {
     content:"\25BC";
     display: inline-block; 
     top: -1px;
     position:relative;
-    font-size: 10px;
+    font-size: 8px;
   }
   &.state_active{
+    border-bottom: 1px solid #37aa77;
     &:after { 
       top: -3px;
       -moz-transform:rotate(180deg);
@@ -225,6 +227,7 @@
   .page__branding {position: absolute; padding: 0 .857em;}
   .page__title {
     padding-left: 10px;
+    margin: 0 -.857em;
   }
 }
 
@@ -239,6 +242,9 @@
     left: auto;
     right: auto;
     bottom: auto;
+    margin: 0;
+  }
+  .page__title {
     margin: 0;
   }
 }
