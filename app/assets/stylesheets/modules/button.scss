@@ -133,7 +133,7 @@ Styleguide 1.0
     float: left;
     padding: 0;
     border-radius: 0;
-    @include box-shadow(inset -1px 0 rgba(0,0,0,.4));
+    @include box-shadow(inset -1px 0 rgba(0,0,0,.3));
   }
   .button:first-child { 
     border-top-left-radius: 4px;
@@ -229,7 +229,12 @@ Styleguide 1.0
   }
 }
 
-.button_quote-tile {float: right; .icon {opacity: .7;}}
+.button_quote-tile {
+  background: #555;
+  float: right;
+  &:hover {background: #666;}
+  &:active {background: #444;}
+}
 
 .button_quote-tile-like {
   &.state_active {
