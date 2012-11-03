@@ -7,14 +7,17 @@
   .quote-tile{
     padding: 0;
     margin: 1px 0;
-    @include border-radius(0);}
+    .quote-tile__body {
+      border-radius:0;
+    }
+  }
 }
 
 
 .quote-tile__body{
   position: relative;
   background: #fff;
-  @include border-radius(4px);
+  border-radius:4px;
   padding: 1.714em;
   color: #aaa;
 }
@@ -182,6 +185,11 @@
     font-size: 0.85em;
     }
   }
+}
+
+@media screen and (max-width: 720px) {
+  .quote-tile_large {padding: 0;}
+  .quote-tile__contributor {padding: 0 1.714em 1.714em 1.714em;}
 }
 
 .quote-tile_edit {
