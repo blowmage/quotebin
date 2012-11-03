@@ -34,3 +34,12 @@
   .next a {@extend .icon_next_special;}
   .prev a {@extend .icon_prev_special;}
 }
+
+@media screen and (max-width: 720px) {
+  .pagination {
+    margin: 12px 6px;
+    .pagination__item {
+      margin: 0 3px;
+    }
+  }
+}
