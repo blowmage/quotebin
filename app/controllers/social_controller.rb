@@ -4,7 +4,6 @@ class SocialController < ApplicationController
   def follow_tag
     tag = Tag.find_by_name params[:tag]
     redirect_to root_path if tag.nil?
-    current_user.follow! tag
 
     state = true
     if current_user.follows? tag
