@@ -42,20 +42,21 @@ class SocialController < ApplicationController
   def like_username_quote
     user = User.find_by_username params[:username]
     redirect_to root_path if user.nil?
-    quote = user.quotes.find_by_id params[:id] # Don't raise here
-    redirect_to account_path(user.username) if quote.nil?
+    @quote = user.quotes.find_by_id params[:id] # Don't raise here
+    redirect_to account_path(user.username) if @quote.nil?
 
-    state = true
-    if current_user.likes? quote
-      state = false
-      current_user.unlike! quote
+    @state = true
+    if current_user.likes? @quote
+      @state = false
+      current_user.unlike! @quote
     else
-      current_user.like! quote
+      current_user.like! @quote
     end
 
     respond_to do |format|
-      format.html { redirect_to account_quote_path(user.username, quote.id) }
-      format.json { render json: { active: state } }
+      format.html { redirect_to account_quote_path(user.username, @quote.id) }
+      format.js
+      format.json { render json: { active: @state } }
     end
   end
 end

@@ -10,8 +10,8 @@
       <i class="icon icon_tweet_white icon_no-text"></i>
     <% end %>
     <%= link_to like_username_quote_path(quote.owner.username, quote.id),
-                data: { social_like: true },
-                method: :post, remote: true, class: "button button_square button_quote-tile button_quote-tile-like" do %>
+                data: { social_like: quote.id },
+                method: :post, remote: true, class: "button button_square button_quote-tile button_quote-tile-like#{current_user.likes?(quote) ? ' state_active' : ''}" do %>
       <i class="icon icon_like_white icon_no-text"></i>
     <% end %>
   </div>
