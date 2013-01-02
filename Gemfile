@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'acts-as-taggable-on'
 gem 'redcarpet'
-gem 'rails', '3.2.8'
+gem 'rails', '3.2.10'
 gem 'stemmer'
 gem 'newrelic_rpm'
 
