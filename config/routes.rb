@@ -10,7 +10,7 @@ Quotebin::Application.routes.draw do
 
   root to: "home#index"
   get "recent", to: "home#recent", as: "recent"
-
+  get "random", to: "random#index", as: "random"
   # Tags
   get 'tags', to: "tags#index", as: 'tags'
   get 'tags/:tag', to: 'tags#show', as: 'tag'

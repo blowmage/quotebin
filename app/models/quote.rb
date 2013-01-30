@@ -38,4 +38,8 @@ class Quote < ActiveRecord::Base
     self.save
   end
 
+  def self.random
+    first order: "RANDOM()"
+  end
+
 end
