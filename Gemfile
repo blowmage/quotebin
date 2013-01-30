@@ -35,4 +35,5 @@ group :development, :test do
   gem 'autotest-growl'
 end
 
+gem 'jbuilder'
 gem 'debugger'

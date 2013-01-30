@@ -1,3 +1,0 @@
-<%= quote.to_json( only: %w{ id author quotation source url },
-                   methods: :tags,
-					         include: [ owner: { only: %w{ id username name email }} ]).html_safe %>
