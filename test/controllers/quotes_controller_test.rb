@@ -27,7 +27,7 @@ describe QuotesController do
       post :create, quote: @attrs
     end
 
-    assert_redirected_to quote_path(assigns(:quote))
+    assert_redirected_to account_quote_path(assigns(:quote).owner.username, assigns(:quote))
   end
 
   def test_show
@@ -42,7 +42,7 @@ describe QuotesController do
 
   def test_update
     put :update, id: @quote.to_param, quote: @attrs
-    assert_redirected_to quote_path(assigns(:quote))
+    assert_redirected_to account_quote_path(assigns(:quote).owner.username, assigns(:quote))
   end
 
   def test_destroy
