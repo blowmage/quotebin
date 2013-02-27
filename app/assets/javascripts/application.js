@@ -17,4 +17,4 @@
 //= require jquery_ujs
 //= require_tree .
 
-$('a[data-popup]').live('click', function(e) { window.open($(this).attr('href')); e.preventDefault(); });
+$(document).on("click", "a[data-popup]", function(e) { window.open($(this).attr('href')); e.preventDefault(); });
